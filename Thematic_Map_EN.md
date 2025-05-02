@@ -1,4 +1,4 @@
-# 🧠 Zorroverse Thematic Map (2025)
+# 🧠 Thematic Map (2025)
 
 A structured summary of the recurring core areas explored during cognitive evolution through AI-human interaction.
 
