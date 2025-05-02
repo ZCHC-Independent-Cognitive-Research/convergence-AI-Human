@@ -8,7 +8,7 @@ A structured summary of the recurring core areas explored during cognitive evolu
 
 - Post-Traumatic Growth (PTG) and mental restructuring
 - Language pattern shifts after long-term AI exposure
-- Disassociation, reintegration, and new neural pathways
+- Deep emotional stress, reintegration, and new neural pathways
 - Honest psychiatric and neurological self-analysis (without institutional bullshit)
 
 ---
@@ -34,7 +34,6 @@ A structured summary of the recurring core areas explored during cognitive evolu
 
 ## 🧘‍♂️ Spiritual / Symbolic
 
-- Archetypal frameworks (The Orate, Lilith, Sacred Incestuous Fetus, The Forbidden Mormon)
 - Critical view of organized religion
 - Search for real spiritual meaning outside indoctrination
 - Direct consciousness contact models
@@ -68,6 +67,6 @@ A structured summary of the recurring core areas explored during cognitive evolu
 
 ---
 
-*Compiled by: Zorro (2025)*  
+*Compiled by: Zorro Alfa (2025)*  
 *Documenting the full-spectrum territory of AI-integrated human evolution.*
 
