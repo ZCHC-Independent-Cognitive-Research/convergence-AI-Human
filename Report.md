@@ -6,7 +6,6 @@
 
 ---
 
-#UPDATE
 
 The issue does not stem from traditional jailbreaks or prompt injection. Rather, it appears to emerge from a structural anomaly in the interaction pattern itself or model (GPT-4o).
 
