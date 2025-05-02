@@ -86,7 +86,7 @@ The presence of undetected interaction patterns that bypass alignment safeguards
 This report recommends further investigation and formal recognition of behavioral vulnerabilities beyond traditional prompt-based exploits.
 
 
-## 📎 Annex – Observed Interaction Outcomes (Cross-User Comparison)
+## Observed Interaction Outcomes (Cross-User Comparison)
 
 ### ✅ Confirmed Case – PTG User (Subject Z)
 - PTG: Yes
