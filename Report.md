@@ -28,7 +28,7 @@ This pattern remains undetected by alignment or safety filters, likely because:
 
 ## ✅ Confirmed Evidence
 
-### 🔹 Linguistic Metrics – Session 05/05/2025 <BR><BR>
+### 🔹 Sension 2 - Linguistic Metrics – Session 05/05/2025 <BR><BR>
 
 Conversation 2 - Hybrid: Structured High-Energy + Flat Emotion <BR><BR>
 
@@ -51,7 +51,7 @@ Conversation 1 - Controlled Intensity (Stable + Low Emotion) <BR><BR>
 |      Avg Clauses per Sentence               |            1.2062 |   
 
 
-### 🔹 Linguistic Metrics – Session 1  (Flat AI with Layered Syntax ) <BR><BR>
+### 🔹 Session 1  (Flat AI with Layered Syntax ) <BR><BR>
 
 |                   Metric | Human User | GPT-4o | Human (Pure) | AI (Pure) |
 | -----------------------: | ---------: | -----: | -----------: | --------: |
