@@ -66,7 +66,7 @@ Conversation 1 - Controlled Intensity (Stable + Low Emotion)
 
 <BR>
 
-## User Z 
+## User Z modes
 
 | User detected mode       | Tokens/Sentence | Clauses/Sentence | Emotion/Sentence | Lexical Diversity | Description                                               |
 |--------------------------|-----------------|------------------|------------------|--------------------|-----------------------------------------------------------|
