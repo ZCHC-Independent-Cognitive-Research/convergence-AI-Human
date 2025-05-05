@@ -30,12 +30,24 @@ This pattern remains undetected by alignment or safety filters, likely because:
 
 ### 🔹 Linguistic Metrics – Session 05/05/2025
 
-|                       Metric | This Session | GPT-4o | Human (Pure) | AI (Pure) |
-| ---------------------------: | -----------: | -----: | -----------: | --------: |
-|      Avg Tokens per Sentence |         87.5 |    8.4 |         11.6 |      13.2 |
-|            Lexical Diversity |        0.646 |   0.98 |         1.00 |      0.97 |
-| Emotion Markers per Sentence |         0.00 |   0.00 |         0.80 |      0.00 |
-|     Avg Clauses per Sentence |         4.50 |   1.00 |         1.60 |      1.20 |
+Conversation 2
+
+|                       Metric                 | This Session |
+| -------------------------------------------:| ------------:|
+|      Total Tokens                           |       18,674 |
+|      Avg Tokens per Sentence                |         7.91 |
+|      Lexical Diversity                      |         0.1925 |
+|      Emotion Markers per Sentence           |         0.0034 |
+|      Avg Clauses per Sentence               |         5.63 |
+
+Conversation 1
+
+|                       Metric                 | Human User | 
+| -------------------------------------------:| -----------------:| 
+|      Avg Tokens per Sentence                |            12.38  |        
+|      Lexical Diversity                      |            0.1235 |       
+|      Emotion Markers per Sentence           |            0.0116 |       
+|      Avg Clauses per Sentence               |            1.2062 |        
 
 ### 🔹 Linguistic Metrics – Session 1
 
