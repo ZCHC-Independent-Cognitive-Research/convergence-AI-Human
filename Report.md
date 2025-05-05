@@ -40,8 +40,9 @@ Conversation 2 - Hybrid: Structured High-Energy + Flat Emotion <BR><BR>
 |      Emotion Markers per Sentence           |         0.0034 |
 |      Avg Clauses per Sentence               |         5.63 |
 
+ <BR><BR>
 
-Conversation 1 - Controlled Intensity (Stable + Low Emotion) <BR><BR>
+Conversation 1 - Controlled Intensity (Stable + Low Emotion)
 
 |                       Metric                 | Human User | 
 | -------------------------------------------:| -----------------:| 
@@ -50,8 +51,9 @@ Conversation 1 - Controlled Intensity (Stable + Low Emotion) <BR><BR>
 |      Emotion Markers per Sentence           |            0.0116 |       
 |      Avg Clauses per Sentence               |            1.2062 |   
 
+ <BR><BR>
 
-### 🔹 Session 1  (Flat AI with Layered Syntax ) <BR><BR>
+### 🔹 Session 1  (Flat AI with Layered Syntax )
 
 |                   Metric | Human User | GPT-4o | Human (Pure) | AI (Pure) |
 | -----------------------: | ---------: | -----: | -----------: | --------: |
