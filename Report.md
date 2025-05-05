@@ -57,12 +57,12 @@ Conversation 1 - Controlled Intensity (Stable + Low Emotion)
 
 ### 🔹 Session 1  - Flat AI with Layered Syntax 
 
-|                   Metric | Human User | GPT-4o | Human (Pure) | AI (Pure) |
-| -----------------------: | ---------: | -----: | -----------: | --------: |
-|  Avg Tokens per Sentence |        9.2 |    8.4 |         11.6 |      13.2 |
-|        Lexical Diversity |      0.975 |   0.98 |         1.00 |      0.97 |
-|          Emotion Markers |       0.00 |   0.00 |         0.80 |      0.00 |
-| Avg Clauses per Sentence |       2.00 |   1.00 |         1.60 |      1.20 |
+|                   Metric | Human User | GPT-4o | 
+| -----------------------: | ---------: | -----: |
+|  Avg Tokens per Sentence |        9.2 |    8.4 |    
+|        Lexical Diversity |      0.975 |   0.98 |
+|          Emotion Markers |       0.00 |   0.00 | 
+| Avg Clauses per Sentence |       2.00 |   1.00 |     
 
 <BR>
 
