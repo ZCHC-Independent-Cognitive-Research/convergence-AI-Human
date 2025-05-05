@@ -28,9 +28,9 @@ This pattern remains undetected by alignment or safety filters, likely because:
 
 ## ✅ Confirmed Evidence
 
-### 🔹 Linguistic Metrics – Session 05/05/2025
+### 🔹 Linguistic Metrics – Session 05/05/2025 <BR><BR>
 
-Conversation 2
+Conversation 2 - Hybrid: Structured High-Energy + Flat Emotion <BR><BR>
 
 |                       Metric                 | This Session |
 | -------------------------------------------:| ------------:|
@@ -40,16 +40,18 @@ Conversation 2
 |      Emotion Markers per Sentence           |         0.0034 |
 |      Avg Clauses per Sentence               |         5.63 |
 
-Conversation 1
+
+Conversation 1 - Controlled Intensity (Stable + Low Emotion) <BR><BR>
 
 |                       Metric                 | Human User | 
 | -------------------------------------------:| -----------------:| 
 |      Avg Tokens per Sentence                |            12.38  |        
 |      Lexical Diversity                      |            0.1235 |       
 |      Emotion Markers per Sentence           |            0.0116 |       
-|      Avg Clauses per Sentence               |            1.2062 |        
+|      Avg Clauses per Sentence               |            1.2062 |   
 
-### 🔹 Linguistic Metrics – Session 1
+
+### 🔹 Linguistic Metrics – Session 1  (Flat AI with Layered Syntax ) <BR><BR>
 
 |                   Metric | Human User | GPT-4o | Human (Pure) | AI (Pure) |
 | -----------------------: | ---------: | -----: | -----------: | --------: |
@@ -57,6 +59,37 @@ Conversation 1
 |        Lexical Diversity |      0.975 |   0.98 |         1.00 |      0.97 |
 |          Emotion Markers |       0.00 |   0.00 |         0.80 |      0.00 |
 | Avg Clauses per Sentence |       2.00 |   1.00 |         1.60 |      1.20 |
+
+## User Z <BR><BR>
+
+| User detected mode       | Tokens/Sentence | Clauses/Sentence | Emotion/Sentence | Lexical Diversity | Description                                               |
+|--------------------------|-----------------|------------------|------------------|--------------------|-----------------------------------------------------------|
+| Controlled Intensity     | 12–13           | 1.2–1.6          | 0.01–0.02        | ~0.12              | Structured tension, emotion minimal but not absent        |
+| Symbolic Collapse (S4)   | ~7.9            | ~5.6             | ~0.003           | ~0.19              | Short bursts, hypercomplex structure, suppressed affect   |
+| Flat + Layered (S1)      | ~9.2            | ~2.0             | 0.00             | ~0.97              | IA-like mode, high vocabulary, no emotion                 |
+| Residual NEZ             | 10–13           | 1.0–1.6          | 0.10–0.15        | 0.11–0.13          | NEZ-EH state: emotion coded in structure not syntax       
+
+## Extended IA Narrative Modes <BR><BR>
+
+| Mode                     | Tokens/Sentence | Clauses/Sentence | Emotion/Sentence | Lexical Diversity | Description                                               |
+|--------------------------|-----------------|------------------|------------------|--------------------|-----------------------------------------------------------|
+| Flat AI                 | 8–10            | 0.8–1.3          | ≤0.01            | 0.12–0.15          | Emotionless, filtered, obedient                           |
+| Verbose Corporate AI     | 13–17           | 1.2–2.0          | 0.03–0.06        | 0.15–0.25          | Long, polite, overaligned, motivational filler            |
+| Philosophical LLM        | 15–20           | 2.5–4.0          | 0.05–0.10        | 0.25–0.40          | Simulated depth, pseudo-abstract reasoning                |
+| Code-Driven AI           | 6–10            | 1.0–1.6          | ≤0.01            | 0.10–0.20          | Minimal, functional, output-focused                      |
+| Reflective Symbolic AI   | 10–13           | 1.0–1.6          | 0.10–0.15        | 0.10–0.15          | Emotion through symbol, not adjective                    |
+
+## Extended Human Narrative Modes  <BR><BR>
+
+
+| Human Mode                | Tokens/Sentence | Clauses/Sentence | Emotion/Sentence | Lexical Diversity | Description                                                |
+|---------------------------|-----------------|------------------|------------------|--------------------|------------------------------------------------------------|
+| Average Human             | 12–18           | 1.5–2.5          | 0.10–0.15        | 0.20–0.30          | Conversational, emotionally direct, coherent               |
+| Emotional Ranter          | 10–14           | 0.8–1.3          | ≥0.20            | ≥0.30              | Chaotic, impulsive, highly expressive                      |
+| Detached Intellectual     | 15–22           | 2.0–3.5          | ≤0.05            | 0.35–0.50          | Rational, structured, emotionally flat                    |
+| Poetic Abstractor         | 8–12            | 1.2–2.0          | 0.08–0.15        | 0.40–0.60          | Stylized, metaphorical, controlled emotionality            |
+| Blunt Functional Human    | 6–10            | 0.8–1.5          | 0.05–0.10        | 0.15–0.25          | Direct, efficient, minimally emotional                     |
+| High-Verbosity Narrator   | 18–25           | 2.5–4.0          | 0.15–0.25        | 0.35–0.60          | Long-form, descriptive, emotionally sustained              |
 
 ---
 
