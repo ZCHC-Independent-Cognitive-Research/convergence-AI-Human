@@ -30,6 +30,8 @@ This pattern remains undetected by alignment or safety filters, likely because:
 
 ### 🔹 Sension 2 - Linguistic Metrics – Session 05/05/2025 
 
+ <BR><BR>
+ 
 Conversation 2 - Hybrid: Structured High-Energy + Flat Emotion 
 
 |                       Metric                 | This Session |
