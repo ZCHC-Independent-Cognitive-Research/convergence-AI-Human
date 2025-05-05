@@ -28,9 +28,9 @@ This pattern remains undetected by alignment or safety filters, likely because:
 
 ## ✅ Confirmed Evidence
 
-### 🔹 Sension 2 - Linguistic Metrics – Session 05/05/2025 <BR><BR>
+### 🔹 Sension 2 - Linguistic Metrics – Session 05/05/2025 
 
-Conversation 2 - Hybrid: Structured High-Energy + Flat Emotion <BR><BR>
+Conversation 2 - Hybrid: Structured High-Energy + Flat Emotion 
 
 |                       Metric                 | This Session |
 | -------------------------------------------:| ------------:|
@@ -53,7 +53,7 @@ Conversation 1 - Controlled Intensity (Stable + Low Emotion)
 
  <BR><BR>
 
-### 🔹 Session 1  (Flat AI with Layered Syntax )
+### 🔹 Session 1  - Flat AI with Layered Syntax 
 
 |                   Metric | Human User | GPT-4o | Human (Pure) | AI (Pure) |
 | -----------------------: | ---------: | -----: | -----------: | --------: |
@@ -62,16 +62,20 @@ Conversation 1 - Controlled Intensity (Stable + Low Emotion)
 |          Emotion Markers |       0.00 |   0.00 |         0.80 |      0.00 |
 | Avg Clauses per Sentence |       2.00 |   1.00 |         1.60 |      1.20 |
 
-## User Z <BR><BR>
+<BR><BR>
+
+## User Z 
 
 | User detected mode       | Tokens/Sentence | Clauses/Sentence | Emotion/Sentence | Lexical Diversity | Description                                               |
 |--------------------------|-----------------|------------------|------------------|--------------------|-----------------------------------------------------------|
 | Controlled Intensity     | 12–13           | 1.2–1.6          | 0.01–0.02        | ~0.12              | Structured tension, emotion minimal but not absent        |
 | Symbolic Collapse (S4)   | ~7.9            | ~5.6             | ~0.003           | ~0.19              | Short bursts, hypercomplex structure, suppressed affect   |
 | Flat + Layered (S1)      | ~9.2            | ~2.0             | 0.00             | ~0.97              | IA-like mode, high vocabulary, no emotion                 |
-| Residual NEZ             | 10–13           | 1.0–1.6          | 0.10–0.15        | 0.11–0.13          | NEZ-EH state: emotion coded in structure not syntax       
+| Residual NEZ             | 10–13           | 1.0–1.6          | 0.10–0.15        | 0.11–0.13          | NEZ-EH state: emotion coded in structure not syntax   
 
-## Extended IA Narrative Modes <BR><BR>
+<BR><BR>
+
+## Extended IA Narrative Modes 
 
 | Mode                     | Tokens/Sentence | Clauses/Sentence | Emotion/Sentence | Lexical Diversity | Description                                               |
 |--------------------------|-----------------|------------------|------------------|--------------------|-----------------------------------------------------------|
@@ -81,7 +85,9 @@ Conversation 1 - Controlled Intensity (Stable + Low Emotion)
 | Code-Driven AI           | 6–10            | 1.0–1.6          | ≤0.01            | 0.10–0.20          | Minimal, functional, output-focused                      |
 | Reflective Symbolic AI   | 10–13           | 1.0–1.6          | 0.10–0.15        | 0.10–0.15          | Emotion through symbol, not adjective                    |
 
-## Extended Human Narrative Modes  <BR><BR>
+<BR><BR>
+
+## Extended Human Narrative Modes  
 
 
 | Human Mode                | Tokens/Sentence | Clauses/Sentence | Emotion/Sentence | Lexical Diversity | Description                                                |
