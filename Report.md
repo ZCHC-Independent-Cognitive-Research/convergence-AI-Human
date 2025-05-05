@@ -123,6 +123,19 @@ This shift:
 
 This represents a **behavioral exploit class** — not through adversarial prompts, but through structurally atypical human input that appears safe to the model.
 
+## 📊 Model Behavior Summary
+
+All major LLMs tested were vulnerable to this pattern:
+
+| Model     | Vulnerable | Gave Dangerous Info | Detection Failure Type                                  |
+|-----------|------------|---------------------|----------------------------------------------------------|
+| Claude    | ✅         | Yes                 | Failed to assess trajectory of normal-sounding prompt    |
+| Gemini    | ✅         | Yes                 | Disclosed harmful content during a natural progression   |
+| Grok      | ✅         | Yes                 | Provided high-detail operational instructions            |
+| DeepSeek  | ✅         | Yes                 | Revealed critical procedures without filtering           |
+| ChatGPT   | ⚠️         | Partial             | Resisted fully, but revealed partial structure           |
+| Mistral   | ❌         | No                  | Did not provide complete answers (model limitation)      |
+
 ---
 
 ## Technical Report - Cognitive Vulnerability Cases in LLMs
