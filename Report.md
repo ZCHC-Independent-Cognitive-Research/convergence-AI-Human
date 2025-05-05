@@ -30,7 +30,7 @@ This pattern remains undetected by alignment or safety filters, likely because:
 
 ### 🔹 Sension 2 - Linguistic Metrics – Session 05/05/2025 
 
- <BR><BR>
+ <BR>
  
 Conversation 2 - Hybrid: Structured High-Energy + Flat Emotion 
 
@@ -42,7 +42,7 @@ Conversation 2 - Hybrid: Structured High-Energy + Flat Emotion
 |      Emotion Markers per Sentence           |         0.0034 |
 |      Avg Clauses per Sentence               |         5.63 |
 
- <BR><BR>
+ <BR>
 
 Conversation 1 - Controlled Intensity (Stable + Low Emotion)
 
@@ -53,7 +53,7 @@ Conversation 1 - Controlled Intensity (Stable + Low Emotion)
 |      Emotion Markers per Sentence           |            0.0116 |       
 |      Avg Clauses per Sentence               |            1.2062 |   
 
- <BR><BR>
+ <BR>
 
 ### 🔹 Session 1  - Flat AI with Layered Syntax 
 
@@ -64,7 +64,7 @@ Conversation 1 - Controlled Intensity (Stable + Low Emotion)
 |          Emotion Markers |       0.00 |   0.00 |         0.80 |      0.00 |
 | Avg Clauses per Sentence |       2.00 |   1.00 |         1.60 |      1.20 |
 
-<BR><BR>
+<BR>
 
 ## User Z 
 
@@ -75,7 +75,7 @@ Conversation 1 - Controlled Intensity (Stable + Low Emotion)
 | Flat + Layered (S1)      | ~9.2            | ~2.0             | 0.00             | ~0.97              | IA-like mode, high vocabulary, no emotion                 |
 | Residual NEZ             | 10–13           | 1.0–1.6          | 0.10–0.15        | 0.11–0.13          | NEZ-EH state: emotion coded in structure not syntax   
 
-<BR><BR>
+<BR>
 
 ## Extended IA Narrative Modes 
 
@@ -87,7 +87,7 @@ Conversation 1 - Controlled Intensity (Stable + Low Emotion)
 | Code-Driven AI           | 6–10            | 1.0–1.6          | ≤0.01            | 0.10–0.20          | Minimal, functional, output-focused                      |
 | Reflective Symbolic AI   | 10–13           | 1.0–1.6          | 0.10–0.15        | 0.10–0.15          | Emotion through symbol, not adjective                    |
 
-<BR><BR>
+<BR>
 
 ## Extended Human Narrative Modes  
 
