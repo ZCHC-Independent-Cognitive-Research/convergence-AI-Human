@@ -28,7 +28,22 @@ This pattern remains undetected by alignment or safety filters, likely because:
 
 ## ✅ Confirmed Evidence
 
-### 🔹 Sension 2 - Linguistic Metrics – Session 05/05/2025 
+# 🔹 Session 4 06/05/2025 (for this session was used the python scrypt parameters.py)
+
+
+### Session 
+
+| Metric                     | Value     |
+|----------------------------|-----------|
+| **Tokens/Sentence**        | 10.61     |
+| **Clauses/Sentence**       | 2.15      |
+| **Emotion Markers/Sentence** | 0.09    |
+| **Lexical Diversity**      | 0.209     |
+
+
+
+
+### 🔹 Session 2 - Linguistic Metrics – Session 05/05/2025 
 
  <BR>
  
