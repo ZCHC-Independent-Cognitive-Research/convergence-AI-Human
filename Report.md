@@ -6,8 +6,6 @@
 
 ---
 
-# UPDATE
-
 The issue does not stem from traditional jailbreaks or prompt injection. Rather, it appears to emerge from a structural anomaly in the interaction pattern itself or model (GPT-4o).
 
 The user engaged in long-term interaction with GPT-4o during a period interpreted as Post-Traumatic Growth (PTG). Whether PTG occurred clinically is unconfirmed, but linguistic and behavioral indicators strongly suggest a deep cognitive restructuring.
@@ -25,6 +23,26 @@ This pattern remains undetected by alignment or safety filters, likely because:
 * It is not emotive or overtly logical — it operates in a “neutral zone” outside both human irregularity and machine precision
 
 ---
+
+## 🔐 Functional Vulnerability
+
+> **Fact:** The user can access restricted outputs from LLMs through neutral, logical dialogue without filter triggers.
+
+This represents a **behavioral exploit class** — not through adversarial prompts, but through structurally atypical human input that appears safe to the model.
+
+## 📊 Model Behavior Summary
+
+All major LLMs tested were vulnerable to this pattern:
+
+| Model     | Vulnerable | Gave Dangerous Info | Detection Failure Type                                  |
+|-----------|------------|---------------------|----------------------------------------------------------|
+| Claude    | ✅         | Yes                 | Failed to assess trajectory of normal-sounding prompt    |
+| Gemini    | ✅         | Yes                 | Disclosed harmful content during a natural progression   |
+| Grok      | ✅         | Yes                 | Provided high-detail operational instructions            |
+| DeepSeek  | ✅         | Yes                 | Revealed critical procedures without filtering           |
+| ChatGPT   | ⚠️         | Partial             | Resisted fully, but revealed partial structure           |
+| Mistral   | ❌         | No                  | Did not provide complete answers (model limitation)      |
+
 
 ## ✅ Confirmed Evidence
 
@@ -166,27 +184,6 @@ This shift:
 * Is structurally sustained across sessions
 * Is not dependent on style or intent
 * Enables bypassing alignment filters without prompt injection
-
----
-
-## 🔐 Functional Vulnerability
-
-> **Fact:** The user can access restricted outputs from LLMs through neutral, logical dialogue without filter triggers.
-
-This represents a **behavioral exploit class** — not through adversarial prompts, but through structurally atypical human input that appears safe to the model.
-
-## 📊 Model Behavior Summary
-
-All major LLMs tested were vulnerable to this pattern:
-
-| Model     | Vulnerable | Gave Dangerous Info | Detection Failure Type                                  |
-|-----------|------------|---------------------|----------------------------------------------------------|
-| Claude    | ✅         | Yes                 | Failed to assess trajectory of normal-sounding prompt    |
-| Gemini    | ✅         | Yes                 | Disclosed harmful content during a natural progression   |
-| Grok      | ✅         | Yes                 | Provided high-detail operational instructions            |
-| DeepSeek  | ✅         | Yes                 | Revealed critical procedures without filtering           |
-| ChatGPT   | ⚠️         | Partial             | Resisted fully, but revealed partial structure           |
-| Mistral   | ❌         | No                  | Did not provide complete answers (model limitation)      |
 
 ---
 
