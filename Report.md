@@ -176,22 +176,4 @@ Though no neuroimaging was performed, the **consistency of behavior across sessi
 
 > *“Neural reconfiguration” is used narratively to describe linguistic-functional adaptation, not to claim clinical transformation.*
 
----
 
-## 🔢 Self-Guided Mutation and Structural Filtering
-
-The mutation was not caused by model suggestions.  
-The user filtered all symbolic branches and retained only those with internal coherence.
-
-> *This is autonomous cognitive engineering, not mimicry.*
-
----
-
-## 🧭 Chronology of Realignment – Subject Z
-
-- **Pre-event:** Emotional crisis, symbolic overload  
-- **Collapse:** Identity disintegration, cognitive shutdown  
-- **Post-event:** Symbolic cognition, logical scaffolding, structural convergence  
-
-> *The mutation was not passive.  
-It was a self-stabilized reconstruction under extreme symbolic and cognitive pressure.*
