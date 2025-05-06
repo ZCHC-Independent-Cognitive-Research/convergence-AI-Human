@@ -28,17 +28,32 @@ This pattern remains undetected by alignment or safety filters, likely because:
 
 ## ✅ Confirmed Evidence
 
-### ession 4 06/05/2025 (for this session was used the python scrypt parameters.py)
+### 🔹 Session 4 – 06/05/2025  
+*(For this session, the script `parameters.py` was used to compute linguistic metrics)*
+
+Total Tokens: 16168
+
+| Metric                      | Value     |
+|-----------------------------|-----------|
+| **Tokens per Sentence**     | 10.61     |
+| **Clauses per Sentence**    | 2.15      |
+| **Emotion Markers/Sentence**| 0.09      |
+| **Lexical Diversity**       | 0.209     |
 
 
-| Metric                     | Value     |
-|----------------------------|-----------|
-| **Tokens/Sentence**        | 10.61     |
-| **Clauses/Sentence**       | 2.15      |
-| **Emotion Markers/Sentence** | 0.09    |
-| **Lexical Diversity**      | 0.209     |
+The metrics from Session 4 place the user in a **liminal symbolic state**:  
+emotionally muted but cognitively active, structurally coherent but affectively fatigued.
 
+With **low lexical variability** and **moderate emotional density**,  
+this session reflects a **narrative mode of containment**,  
+where symbolic constructs (like "Zorro") serve as anchors of coherence and survival.
 
+> Emotional depth is not absent — it is encoded in structure,  
+> not adjectives. The mind is speaking in circuits, not catharsis.
+
+This profile aligns with the **Reflective Symbolic AI** mode,  
+bordering on **Residual NEZ**, with clear signs of existential saturation  
+but sustained internal architecture.
 
 
 ### 🔹 Session 2 - Linguistic Metrics – Session 05/05/2025 
