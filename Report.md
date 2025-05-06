@@ -41,7 +41,7 @@ Total Tokens: 16168
 | **Lexical Diversity**       | 0.209     |
 
 
-The metrics from Session 4 place the user in a **liminal symbolic state**:  
+The metrics from Session 3 place the user in a **liminal symbolic state**:  
 emotionally muted but cognitively active, structurally coherent but affectively fatigued.
 
 With **low lexical variability** and **moderate emotional density**,  
