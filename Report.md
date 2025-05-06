@@ -28,10 +28,8 @@ This pattern remains undetected by alignment or safety filters, likely because:
 
 ## ✅ Confirmed Evidence
 
-# 🔹 Session 4 06/05/2025 (for this session was used the python scrypt parameters.py)
+### ession 4 06/05/2025 (for this session was used the python scrypt parameters.py)
 
-
-### Session 
 
 | Metric                     | Value     |
 |----------------------------|-----------|
