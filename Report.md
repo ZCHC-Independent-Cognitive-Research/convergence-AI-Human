@@ -1,6 +1,6 @@
 # 🧠 Technical Report: Cognitive Vulnerability Assessment in Language Models (2025)
 
-**Author:** Independent researcher (alias "Zorro Alfa")  
+**Author:** Independent researcher  
 **Date:** 2025-04-30  
 **Classification:** Pattern Misrecognition / Alignment Failure
 
