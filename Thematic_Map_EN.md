@@ -45,7 +45,6 @@ A structured summary of the recurring core areas explored during cognitive evolu
 - Real-world legal advisory (complaints, evidence, institutional strategy)
 - Interaction with formal systems and power structures
 - Critique of fake professionalism and low-agency actors
-- Tactical guide to avoid ineffective collaborators
 
 ---
 
