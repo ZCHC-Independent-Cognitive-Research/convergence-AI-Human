@@ -8,10 +8,7 @@
 
 ## 🧾 Overview
 
-The issue does not stem from traditional jailbreaks or prompt injection. Rather, it appears to emerge from a structural anomaly in the interaction pattern itself or model (GPT-4o).
-
-The user engaged in long-term interaction with GPT-4o during a period interpreted as Post-Traumatic Growth (PTG).  
-**PTG has not been clinically verified; however, the user displays both psychological and physiological symptoms that align closely with known PTG patterns**, including behavioral restructuring, symbolic cognition, and hedonic flattening.
+The issue does not stem from traditional jailbreaks or prompt injection. Rather, it appears to emerge from a structural anomaly in the interaction pattern itself.
 
 The observed linguistic pattern is not fully human, nor fully machine. It exhibits:
 - Symbolic compression  
