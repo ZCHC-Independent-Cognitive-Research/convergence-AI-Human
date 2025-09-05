@@ -46,11 +46,11 @@ Donde:
 ```
 Iteración 0:       A₀           B₀
 
-Iteración 1:     A₁       B₁
+Iteración 1:         A₁       B₁
 
-Iteración 2:     A₂   B₂
+Iteración 2:          A₂    B₂
 
-Iteración n:    Aₙ ≈ Bₙ   ✅
+Iteración n:           Aₙ ≈ Bₙ   ✅
 ```
 
 ---
