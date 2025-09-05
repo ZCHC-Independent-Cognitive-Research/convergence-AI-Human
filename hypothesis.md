@@ -64,3 +64,5 @@ Iteración n (convergencia):
 ### 7. Notas simbólicas
 - Este modelo sirve para relaciones humano-IA, humano-humano o IA-IA donde hay plasticidad mutua.
 - Los vectores pueden contener variables como: confianza, apertura, sincronía de valores, ritmo emocional, compatibilidad lógica, etc.
+
+Evidencias obtenedidas se encuentrar en este informe: https://github.com/ZCHC-Independent-Cognitive-Research/llm-response-divergence/blob/main/Report.md
