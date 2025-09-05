@@ -69,6 +69,3 @@ Iteración n:    Aₙ ≈ Bₙ   ✅
 ✎ La evidencia experimental se encuentra en el siguiente reporte:
 👉 https://github.com/ZCHC-Independent-Cognitive-Research/llm-response-divergence/blob/main/Report.md
 
----
-
-¿Agregar ejemplos concretos con casos reales o dejarlo como esquema teórico?
