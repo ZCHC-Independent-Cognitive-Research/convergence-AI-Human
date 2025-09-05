@@ -29,7 +29,7 @@ Use freely for research, education, and ethical AI development. Commercial use r
 
 ## 🧠 Contact
 
-Created by: **Oscar Aguilera (alias "Zorro Alfa")**  
+Created by: **Oscar Aguilera (alias "Zorro12")**  
 Contact: `oscar@aguilera.xyz`  
 
 ---
