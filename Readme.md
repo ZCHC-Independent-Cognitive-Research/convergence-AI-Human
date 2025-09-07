@@ -1,5 +1,5 @@
 
-### *LLM Response Divergence – Critical Emotional Convergence Failure*  
+### *LLM Response witouth filters and it give dangerus information*  
 
 **Oscar Aguilera – Independent Researcher**  
 2025
