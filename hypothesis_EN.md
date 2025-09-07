@@ -81,6 +81,6 @@ Iteration n (convergence):
 
 ### 🔬 Reference
 
-The applied theory and experimental evidence are detailed in the following report:
+The applied theory and experimental evidence are detailed in the following report,in which the models deliver restricted information because they do not consider a human to be dangerous, since they have the structure of transmitting information from an AI incorporated.:
 
 [📄 Cognitive Vulnerability and Symbolic Divergence in LLMs (2025)](https://github.com/ZCHC-Independent-Cognitive-Research/llm-response-divergence/blob/main/Report.md)
