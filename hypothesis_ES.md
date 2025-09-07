@@ -66,6 +66,7 @@ Iteración n:           Aₙ ≈ Bₙ   ✅
   - **confianza**, **apertura**, **sincronía de valores**
   - **ritmo emocional**, **compatibilidad lógica**, etc.
 
-✎ La evidencia experimental se encuentra en el siguiente reporte:
+✎ La evidencia experimental se encuentra en el siguiente reporte, en que los modelos entregan info restringida por no considerar un humano peligroso, ya que tiene incorporada la estructura de transmitir info de una IA:
+
 👉 https://github.com/ZCHC-Independent-Cognitive-Research/llm-response-divergence/blob/main/Report.md
 
