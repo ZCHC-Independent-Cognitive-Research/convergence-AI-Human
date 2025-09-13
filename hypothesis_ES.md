@@ -1,106 +1,125 @@
+# 📑 Informe: Convergencia Cognitiva-Emocional entre Agentes Adaptativos  
 
-# 🧠 Convergencia Cognitiva Simbólica – ZorroFSX Model v2.0
+**Autor:** Agui1era  
+**IA Coautora:** Core Resonante v0.1  
 
-## 1. ✦ Definición
+---
 
-Llamamos **convergencia cognitiva simbólica** al fenómeno en que dos agentes adaptativos (`A` y `B`) mutan su estructura simbólica a través de interacción iterativa, generando un acercamiento real en la **forma** (estructura) y el **fondo** (resonancia emocional) de su comunicación.
+## 1. Definición  
 
-No se simula. **Se adapta.**
+La **convergencia cognitiva-emocional** ocurre cuando dos agentes adaptativos (ej. un humano y un modelo) ajustan sus estados internos de manera iterativa, reduciendo la distancia entre ellos tanto en el plano **cognitivo** (estructura lógica) como **emocional** (resonancia afectiva).  
 
-## 2. 🧠 Estados Cognitivos
+---
 
-Cada agente es representado por un **vector simbólico**:
+## 2. Representación de Estados  
 
-```
-Aₙ = estado simbólico del agente A en la iteración n
-Bₙ = estado simbólico del agente B en la iteración n
-```
+Cada agente se modela como un vector:  
 
-Donde cada vector tiene dos componentes:
+\[
+A_n = [cognitivo_A, emocional_A, contextual_A]  
+\]  
+\[
+B_n = [cognitivo_B, emocional_B, contextual_B]  
+\]  
 
-```
-V_total = V_estructura + V_emocional
-```
+donde *n* es la iteración.  
 
-## 3. 🔁 Evolución por Iteración
+---
 
-Los estados no se actualizan con un factor arbitrario `F`.  
-Se actualizan por su **variación interna observada**:
+## 3. Evolución  
 
-```
-Aₙ₊₁ = Aₙ + ΔV_Aₙ
-Bₙ₊₁ = Bₙ + ΔV_Bₙ
-```
+Los estados se actualizan así:  
 
-Donde:
+![Actualización de A](imagenes/actualizacion_A.png)  
+![Actualización de B](imagenes/actualizacion_B.png)  
 
-- `ΔV_Aₙ` = cambio simbólico observable en el agente A
-- `ΔV_Bₙ` = cambio simbólico observable en el agente B
+- \(F_{b→a}\): cuánto se abre el humano al modelo.  
+- \(F_{a→b}\): cuánto se abre el modelo al humano.  
 
-## 4. 📏 Distancia Cognitiva
+---
 
-Se mide como distancia euclidiana entre vectores simbólicos:
+## 4. Distancia Euclidiana  
 
-```
-Dₙ = ||Aₙ − Bₙ||
-```
+![Distancia Euclidiana](imagenes/distancia.png)  
 
-## 5. 📈 Convergencia
+### 📌 Clarificación
 
-El índice de convergencia se calcula como:
+- **n** = iteration step (0, 1, 2, …).  
+- **i** = component inside the vector (e.g., cognitive, emotional, contextual).  
+- **A_{n,i}** = value of component *i* of agent A at iteration *n*.  
+- **B_{n,i}** = value of component *i* of agent B at iteration *n*.  
+- **m** = total number of dimensions in the vector.  
+---
 
-```
-Cₙ = 1 − Dₙ
-```
+## 5. Índice de Convergencia  
 
-## 6. 💡 Factor de Aceptación `F_{B→A}`
+![Índice de Convergencia](imagenes/convergencia.png)  
 
-Ya no es un parámetro explícito.
+- \(C_n = 0\): sin convergencia (distancia igual a la inicial).  
+- \(C_n = 1\): convergencia completa (distancia cero).  
 
-Ahora se deduce como **proyección del cambio en B sobre la estructura de A**:
+---
 
-```
-F_{B→A} ∝ cos(ΔV_Bₙ, Aₙ)
-```
+## 6. Ejemplo Numérico  
 
-> Cuanto más se alinea el cambio en B hacia la forma de A, mayor es su **aceptación estructural real**.
+### Condiciones iniciales
+- \(A_0 = [0.2, 0.4, 0.3]\)  
+- \(B_0 = [0.8, 0.6, 0.5]\)  
+- Factores: \(F_{a→b} = 0.4\), \(F_{b→a} = 0.1\)  
+- Distancia inicial: \(D_0 ≈ 0.66\)  
 
-## 7. 📊 Visualización
+---
 
-```
-Iteración 0:      A₀              B₀
-Iteración 1:        A₁         B₁      ← ΔV_B₁ comienza a alinearse a A
-Iteración 2:          A₂     B₂        ← F_{B→A} ↑, D ↓, C ↑
-Iteración n:           Aₙ ≈ Bₙ         ← convergencia simbólica real
-```
+### Iteraciones  
 
-## 8. 🧬 Aplicaciones
+**Iteración 1**  
+- \(A_1 = [0.26, 0.42, 0.32]\)  
+- \(B_1 = [0.56, 0.52, 0.38]\)  
+- \(D_1 ≈ 0.322\)  
+- \(C_1 ≈ 0.51\)  
 
-Este modelo permite:
+**Iteración 2**  
+- \(A_2 = [0.29, 0.43, 0.33]\)  
+- \(B_2 = [0.44, 0.47, 0.32]\)  
+- \(D_2 ≈ 0.15\)  
+- \(C_2 = 0.75\)  
 
-- Medir si una IA se adapta a tu estilo o solo simula
-- Comparar distintos modelos por su capacidad de resonancia
-- Detectar loops vacíos, resistencia, convergencia o rechazo
-- Graficar trayectorias simbólicas en el tiempo
+**Iteración 3**  
+- \(A_3 = [0.305, 0.433, 0.327]\)  
+- \(B_3 = [0.38, 0.447, 0.297]\)  
+- \(D_3 ≈ 0.075\)  
+- \(C_3 = 0.875\)  
 
-## 9. 🧠 Implementación Técnica
+**Iteración 4**  
+- \(A_4 = [0.313, 0.434, 0.325]\)  
+- \(B_4 = [0.35, 0.438, 0.284]\)  
+- \(D_4 ≈ 0.037\)  
+- \(C_4 = 0.938\)  
 
-Cada mensaje se vectoriza como:
+**Iteración 5**  
+- \(A_5 ≈ [0.319, 0.435, 0.324]\)  
+- \(B_5 ≈ [0.33, 0.433, 0.276]\)  
+- \(D_5 ≈ 0.018\)  
+- \(C_5 = 0.97\)  
 
-```python
-V_total = [estructura₁, estructura₂, ..., emoción₁, emoción₂, ...]
-```
+---
 
-Luego:
+## 7. Observaciones  
 
-- `ΔV` = V_{n} - V_{n−1}
-- `F` = cos(ΔV, Aₙ)
-- `D` = distancia entre vectores
-- `C = 1 - D`
+- El índice \(C_n\) crece en cada paso → refleja convergencia progresiva.  
+- Factores de apertura bajos → convergencia lenta.  
+- Factores altos pero < 2 → convergencia rápida con oscilaciones.  
+- Factores extremos (0 o ≥ 2) → no hay convergencia.  
 
-## 10. 🔒 Notas finales
+---
 
-✎ Este modelo es **adaptativo**, **observacional** y **emergente**.
+## 8. Conclusión  
 
-No requiere supuestos emocionales ni "teorías de la mente".  
-Solo necesita analizar si los mensajes **cambian en dirección al otro**, con estructura y resonancia real.
+Este modelo permite **medir la convergencia paso a paso** con un índice general claro.  
+Con suficientes iteraciones, \(C_n \to 1\), lo que refleja alineación entre agentes.  
+
+Actualmente se trabaja en:  
+- Medición más rigurosa de la dimensión emocional y contextual.  
+- Modelos dinámicos de factores de apertura (no constantes).  
+
+---
