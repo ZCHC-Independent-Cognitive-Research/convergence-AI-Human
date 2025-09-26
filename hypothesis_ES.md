@@ -15,109 +15,92 @@ La **convergencia cognitivo-emocional** ocurre cuando dos agentes adaptativos (e
 
 Cada agente se modela como un vector de **45 dimensiones**, organizado en 9 módulos con 5 preguntas cada uno:  
 
-\[
+$$
 U_n = [u_1, u_2, ..., u_{45}]
-\]  
-\[
-I_n = [i_1, i_2, ..., i_{45}]
-\]  
+$$
 
-donde:  
-- \(U_n\): vector del humano en la iteración \(n\).  
-- \(I_n\): vector de la IA en la iteración \(n\).  
-- Cada dimensión corresponde a la respuesta a una pregunta.  
+$$
+I_n = [i_1, i_2, ..., i_{45}]
+$$  
 
 ---
 
 ## 3. Distancia  
 
-\[
+$$
 D_n = \sqrt{\frac{1}{45} \sum_{k=1}^{45} (u_k - i_k)^2}
-\]  
-
-\(\;0 \leq D_n \leq 1\).  
+$$  
 
 ---
 
 ## 4. Intensidad  
 
-\[
+$$
 I = \alpha_{len} \cdot I_{len} + \alpha_{emo} \cdot I_{emo} + \alpha_{style} \cdot I_{style}
-\]  
+$$  
 
-- \(I_{len} = \min(1, \tfrac{\text{nº palabras}}{20})\)  
-- \(I_{emo}\): proporción de palabras emocionales  
-- \(I_{style}\): estilo gráfico (mayúsculas, exclamaciones, repeticiones)  
-- Pesos iniciales: \(\alpha_{len}=0.5,\; \alpha_{emo}=0.3,\; \alpha_{style}=0.2\).  
+- $I_{len} = \min(1, \tfrac{\text{nº palabras}}{20})$  
+- $I_{emo}$: proporción de palabras emocionales  
+- $I_{style}$: estilo gráfico (mayúsculas, exclamaciones, repeticiones)  
 
 ---
 
 ## 5. Apertura  
 
 ### Humano
-\[
+$$
 F_{humano}(n+1) = F_{humano}(n)\cdot (1 - \alpha \cdot I) + \beta \cdot (1 - D_n)
-\]
+$$
 
 ### IA
-\[
+$$
 F_{IA}(n+1) = F_{IA}(0) + \gamma \cdot D_n
-\]
-
-- \(\alpha\): sensibilidad a la intensidad emocional  
-- \(\beta\): sensibilidad a la distancia cognitiva  
-- \(\gamma\): sensibilidad de la IA a la distancia  
+$$
 
 ---
 
 ## 6. Actualización de vectores  
 
-\[
+$$
 U_{n+1} = U_n + F_{IA→U}(I_n - U_n)
-\]  
-\[
+$$  
+
+$$
 I_{n+1} = I_n + F_{U→IA}(U_n - I_n)
-\]  
+$$  
 
 ---
 
 ## 7. Índice de convergencia  
 
-\[
+$$
 C_n = 1 - \frac{D_n}{D_0}
-\]  
-
-- \(C_n = 0\): sin convergencia  
-- \(C_n = 1\): convergencia total  
+$$  
 
 ---
 
 ## 8. Aprendizaje de parámetros  
 
-\[
+$$
 Error = F_{observado} - F_{predicho}
-\]  
+$$  
 
-\[
+$$
 \alpha_{n+1} = \alpha_n + \eta \cdot (Error) \cdot I
-\]  
-\[
-\beta_{n+1} = \beta_n + \eta \cdot (Error) \cdot (1 - D_n)
-\]  
+$$  
 
-- \(\eta\): tasa de aprendizaje  
-- Restricción: \(\alpha + \beta = 1\)  
+$$
+\beta_{n+1} = \beta_n + \eta \cdot (Error) \cdot (1 - D_n)
+$$  
 
 ---
 
 ## 9. Ejemplo reducido (m=3)
 
-### Condiciones iniciales
-- \(U_0 = [0.8, 0.4, 0.2]\)  
-- \(I_0 = [0.3, 0.6, 0.5]\)  
-- \(F_{humano}=0.5\), \(F_{IA}=0.4\)  
+- $U_0 = [0.8, 0.4, 0.2]$  
+- $I_0 = [0.3, 0.6, 0.5]$  
+- $F_{humano}=0.5$, $F_{IA}=0.4$  
 
-### Iteraciones
 | Iter | Intensidad | F_humano | F_IA | U | I | D | C |
 |------|------------|----------|------|---|---|---|---|
 | 1    | 0.5        | 0.325    | 0.438| [0.625,0.525,0.350] | [0.475,0.475,0.350] | 0.173 | 0.44 |
@@ -128,11 +111,8 @@ Error = F_{observado} - F_{predicho}
 
 ## 10. Ejemplo expandido (m=45)
 
-- \(U_0, I_0\): vectores iniciales con valores aleatorios entre [0,1].  
-- Iteraciones: 5 pasos.  
-- Resultado típico:  
-  - Distancia inicial: \(D_0 ≈ 0.42\)  
-  - Distancia final: \(D_5 ≈ 0.03\)  
-  - Convergencia: \(C_5 ≈ 0.93\)  
+- Distancia inicial: $D_0 ≈ 0.42$  
+- Distancia final tras 5 pasos: $D_5 ≈ 0.03$  
+- Convergencia: $C_5 ≈ 0.93$  
 
 ---
