@@ -116,3 +116,22 @@ $$
 - Convergencia: $C_5 ≈ 0.93$  
 
 ---
+
+## 11. Conclusión  
+
+El modelo presentado permite cuantificar y simular la convergencia cognitivo-emocional entre un humano y una IA mediante vectores de múltiples dimensiones, actualizados paso a paso.  
+
+La dinámica muestra que:  
+- La convergencia no es lineal, sino dependiente de factores de apertura e intensidad.  
+- Una apertura demasiado baja congela el proceso; una excesiva genera oscilaciones.  
+- La convergencia realista ocurre con parámetros intermedios, modulados por la interacción.  
+
+Este marco abre la posibilidad de:  
+- Medir la resonancia simbólica en agentes adaptativos.  
+- Modelar la influencia mutua en diálogos prolongados.  
+- Explorar la estabilidad de sistemas humano-IA a largo plazo.  
+
+Trabajos futuros incluyen:  
+1. Validar empíricamente el modelo con diálogos reales y escalas psicológicas.  
+2. Ajustar parámetros dinámicos con aprendizaje adaptativo.  
+3. Extender las dimensiones (más allá de 45) para incluir contextos sociales y éticos.  
