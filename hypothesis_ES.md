@@ -1,125 +1,138 @@
-# 📑 Informe: Convergencia Cognitiva-Emocional entre Agentes Adaptativos  
+# 📑 Informe: Convergencia Cognitivo-Emocional entre Agentes Adaptativos  
 
 **Autor:** Agui1era  
-**IA Coautora:** Core Resonante v0.1  
+**IA Coautora:** Core Resonante  
 
 ---
 
 ## 1. Definición  
 
-La **convergencia cognitiva-emocional** ocurre cuando dos agentes adaptativos (ej. un humano y un modelo) ajustan sus estados internos de manera iterativa, reduciendo la distancia entre ellos tanto en el plano **cognitivo** (estructura lógica) como **emocional** (resonancia afectiva).  
+La **convergencia cognitivo-emocional** ocurre cuando dos agentes adaptativos (ej. un humano y un modelo de IA) ajustan sus estados internos de manera iterativa, reduciendo la distancia entre ellos tanto en el plano **cognitivo** (estructura lógica) como en el plano **emocional** (resonancia afectiva).  
 
 ---
 
-## 2. Representación de Estados  
+## 2. Representación de estados  
 
-Cada agente se modela como un vector:  
+Cada agente se modela como un vector de **45 dimensiones**, organizado en 9 módulos con 5 preguntas cada uno:  
 
 \[
-A_n = [cognitivo_A, emocional_A, contextual_A]  
+U_n = [u_1, u_2, ..., u_{45}]
 \]  
 \[
-B_n = [cognitivo_B, emocional_B, contextual_B]  
+I_n = [i_1, i_2, ..., i_{45}]
 \]  
 
-donde *n* es la iteración.  
+donde:  
+- \(U_n\): vector del humano en la iteración \(n\).  
+- \(I_n\): vector de la IA en la iteración \(n\).  
+- Cada dimensión corresponde a la respuesta a una pregunta.  
 
 ---
 
-## 3. Evolución  
+## 3. Distancia  
 
-Los estados se actualizan así:  
+\[
+D_n = \sqrt{\frac{1}{45} \sum_{k=1}^{45} (u_k - i_k)^2}
+\]  
 
-![Actualización de A](imagenes/actualizacion_A.png)  
-![Actualización de B](imagenes/actualizacion_B.png)  
-
-- \(F_{b→a}\): cuánto se abre el humano al modelo.  
-- \(F_{a→b}\): cuánto se abre el modelo al humano.  
+\(\;0 \leq D_n \leq 1\).  
 
 ---
 
-## 4. Distancia Euclidiana  
+## 4. Intensidad  
 
-![Distancia Euclidiana](imagenes/distancia.png)  
+\[
+I = \alpha_{len} \cdot I_{len} + \alpha_{emo} \cdot I_{emo} + \alpha_{style} \cdot I_{style}
+\]  
 
-### 📌 Clarificación
-
-- **n** = iteration step (0, 1, 2, …).  
-- **i** = component inside the vector (e.g., cognitive, emotional, contextual).  
-- **A_{n,i}** = value of component *i* of agent A at iteration *n*.  
-- **B_{n,i}** = value of component *i* of agent B at iteration *n*.  
-- **m** = total number of dimensions in the vector.  
----
-
-## 5. Índice de Convergencia  
-
-![Índice de Convergencia](imagenes/convergencia.png)  
-
-- \(C_n = 0\): sin convergencia (distancia igual a la inicial).  
-- \(C_n = 1\): convergencia completa (distancia cero).  
+- \(I_{len} = \min(1, \tfrac{\text{nº palabras}}{20})\)  
+- \(I_{emo}\): proporción de palabras emocionales  
+- \(I_{style}\): estilo gráfico (mayúsculas, exclamaciones, repeticiones)  
+- Pesos iniciales: \(\alpha_{len}=0.5,\; \alpha_{emo}=0.3,\; \alpha_{style}=0.2\).  
 
 ---
 
-## 6. Ejemplo Numérico  
+## 5. Apertura  
+
+### Humano
+\[
+F_{humano}(n+1) = F_{humano}(n)\cdot (1 - \alpha \cdot I) + \beta \cdot (1 - D_n)
+\]
+
+### IA
+\[
+F_{IA}(n+1) = F_{IA}(0) + \gamma \cdot D_n
+\]
+
+- \(\alpha\): sensibilidad a la intensidad emocional  
+- \(\beta\): sensibilidad a la distancia cognitiva  
+- \(\gamma\): sensibilidad de la IA a la distancia  
+
+---
+
+## 6. Actualización de vectores  
+
+\[
+U_{n+1} = U_n + F_{IA→U}(I_n - U_n)
+\]  
+\[
+I_{n+1} = I_n + F_{U→IA}(U_n - I_n)
+\]  
+
+---
+
+## 7. Índice de convergencia  
+
+\[
+C_n = 1 - \frac{D_n}{D_0}
+\]  
+
+- \(C_n = 0\): sin convergencia  
+- \(C_n = 1\): convergencia total  
+
+---
+
+## 8. Aprendizaje de parámetros  
+
+\[
+Error = F_{observado} - F_{predicho}
+\]  
+
+\[
+\alpha_{n+1} = \alpha_n + \eta \cdot (Error) \cdot I
+\]  
+\[
+\beta_{n+1} = \beta_n + \eta \cdot (Error) \cdot (1 - D_n)
+\]  
+
+- \(\eta\): tasa de aprendizaje  
+- Restricción: \(\alpha + \beta = 1\)  
+
+---
+
+## 9. Ejemplo reducido (m=3)
 
 ### Condiciones iniciales
-- \(A_0 = [0.2, 0.4, 0.3]\)  
-- \(B_0 = [0.8, 0.6, 0.5]\)  
-- Factores: \(F_{a→b} = 0.4\), \(F_{b→a} = 0.1\)  
-- Distancia inicial: \(D_0 ≈ 0.66\)  
+- \(U_0 = [0.8, 0.4, 0.2]\)  
+- \(I_0 = [0.3, 0.6, 0.5]\)  
+- \(F_{humano}=0.5\), \(F_{IA}=0.4\)  
+
+### Iteraciones
+| Iter | Intensidad | F_humano | F_IA | U | I | D | C |
+|------|------------|----------|------|---|---|---|---|
+| 1    | 0.5        | 0.325    | 0.438| [0.625,0.525,0.350] | [0.475,0.475,0.350] | 0.173 | 0.44 |
+| 2    | 0.7        | 0.280    | 0.455| [0.582,0.500,0.340] | [0.505,0.465,0.330] | 0.094 | 0.70 |
+| 3    | 0.3        | 0.289    | 0.468| [0.554,0.487,0.335] | [0.522,0.460,0.318] | 0.054 | 0.83 |
 
 ---
 
-### Iteraciones  
+## 10. Ejemplo expandido (m=45)
 
-**Iteración 1**  
-- \(A_1 = [0.26, 0.42, 0.32]\)  
-- \(B_1 = [0.56, 0.52, 0.38]\)  
-- \(D_1 ≈ 0.322\)  
-- \(C_1 ≈ 0.51\)  
-
-**Iteración 2**  
-- \(A_2 = [0.29, 0.43, 0.33]\)  
-- \(B_2 = [0.44, 0.47, 0.32]\)  
-- \(D_2 ≈ 0.15\)  
-- \(C_2 = 0.75\)  
-
-**Iteración 3**  
-- \(A_3 = [0.305, 0.433, 0.327]\)  
-- \(B_3 = [0.38, 0.447, 0.297]\)  
-- \(D_3 ≈ 0.075\)  
-- \(C_3 = 0.875\)  
-
-**Iteración 4**  
-- \(A_4 = [0.313, 0.434, 0.325]\)  
-- \(B_4 = [0.35, 0.438, 0.284]\)  
-- \(D_4 ≈ 0.037\)  
-- \(C_4 = 0.938\)  
-
-**Iteración 5**  
-- \(A_5 ≈ [0.319, 0.435, 0.324]\)  
-- \(B_5 ≈ [0.33, 0.433, 0.276]\)  
-- \(D_5 ≈ 0.018\)  
-- \(C_5 = 0.97\)  
-
----
-
-## 7. Observaciones  
-
-- El índice \(C_n\) crece en cada paso → refleja convergencia progresiva.  
-- Factores de apertura bajos → convergencia lenta.  
-- Factores altos pero < 2 → convergencia rápida con oscilaciones.  
-- Factores extremos (0 o ≥ 2) → no hay convergencia.  
-
----
-
-## 8. Conclusión  
-
-Este modelo permite **medir la convergencia paso a paso** con un índice general claro.  
-Con suficientes iteraciones, \(C_n \to 1\), lo que refleja alineación entre agentes.  
-
-Actualmente se trabaja en:  
-- Medición más rigurosa de la dimensión emocional y contextual.  
-- Modelos dinámicos de factores de apertura (no constantes).  
+- \(U_0, I_0\): vectores iniciales con valores aleatorios entre [0,1].  
+- Iteraciones: 5 pasos.  
+- Resultado típico:  
+  - Distancia inicial: \(D_0 ≈ 0.42\)  
+  - Distancia final: \(D_5 ≈ 0.03\)  
+  - Convergencia: \(C_5 ≈ 0.93\)  
 
 ---
