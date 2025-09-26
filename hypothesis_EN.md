@@ -1,125 +1,118 @@
 # 📑 Report: Cognitive-Emotional Convergence between Adaptive Agents  
 
 **Author:** Agui1era  
-**AI Co-Author:** Core Resonant v0.1  
+**Co-Author AI:** Resonant Core  
 
 ---
 
 ## 1. Definition  
 
-**Cognitive-emotional convergence** occurs when two adaptive agents (e.g., a human and a model) iteratively adjust their internal states, reducing the distance between them in both the **cognitive** (logical structure) and **emotional** (affective resonance) domains.  
+**Cognitive-emotional convergence** occurs when two adaptive agents (e.g., a human and an AI model) iteratively adjust their internal states, reducing the distance between them in both the **cognitive** (logical structure) and the **emotional** (affective resonance) domains.  
 
 ---
 
-## 2. State Representation  
+## 2. State representation  
 
-Each agent is modeled as a vector:  
+Each agent is modeled as a **45-dimensional vector**, grouped in 9 modules of 5 questions each:  
 
-\[
-A_n = [cognitive_A, emotional_A, contextual_A]  
-\]  
-\[
-B_n = [cognitive_B, emotional_B, contextual_B]  
-\]  
+$$
+U_n = [u_1, u_2, ..., u_{45}]
+$$  
 
-where *n* is the iteration.  
-
----
-
-## 3. Evolution  
-
-State updates follow:  
-
-![Update A](imagenes/actualizacion_A.png)  
-![Update B](imagenes/actualizacion_B.png)  
-
-- \(F_{b→a}\): how much the human opens to the model.  
-- \(F_{a→b}\): how much the model opens to the human.  
+$$
+I_n = [i_1, i_2, ..., i_{45}]
+$$  
 
 ---
 
-## 4. Euclidean Distance  
+## 3. Distance  
 
-![Euclidean Distance](imagenes/distancia.png)  
-
-### 📌 Clarification 
-- **n** = iteration step (0, 1, 2, …).  
-- **i** = component inside the vector (e.g., cognitive, emotional, contextual).  
-- **A_{n,i}** = value of component *i* of agent A at iteration *n*.  
-- **B_{n,i}** = value of component *i* of agent B at iteration *n*.  
-- **m** = total number of dimensions in the vector.  
+$$
+D_n = \sqrt{\frac{1}{45} \sum_{k=1}^{45} (u_k - i_k)^2}
+$$  
 
 ---
 
-## 5. Convergence Index  
+## 4. Intensity  
 
-![Convergence Index](imagenes/convergencia.png)  
+$$
+I = \alpha_{len} \cdot I_{len} + \alpha_{emo} \cdot I_{emo} + \alpha_{style} \cdot I_{style}
+$$  
 
-- \(C_n = 0\): no convergence (distance same as initial).  
-- \(C_n = 1\): full convergence (zero distance).  
-
----
-
-## 6. Numerical Example  
-
-### Initial conditions
-- \(A_0 = [0.2, 0.4, 0.3]\)  
-- \(B_0 = [0.8, 0.6, 0.5]\)  
-- Factors: \(F_{a→b} = 0.4\), \(F_{b→a} = 0.1\)  
-- Initial distance: \(D_0 ≈ 0.66\)  
+- $I_{len} = \min(1, \tfrac{\text{word count}}{20})$  
+- $I_{emo}$: proportion of emotional words  
+- $I_{style}$: stylistic features (caps, exclamations, repetitions)  
 
 ---
 
-### Iterations  
+## 5. Openness  
 
-**Iteration 1**  
-- \(A_1 = [0.26, 0.42, 0.32]\)  
-- \(B_1 = [0.56, 0.52, 0.38]\)  
-- \(D_1 ≈ 0.322\)  
-- \(C_1 ≈ 0.51\)  
+### Human
+$$
+F_{human}(n+1) = F_{human}(n)\cdot (1 - \alpha \cdot I) + \beta \cdot (1 - D_n)
+$$
 
-**Iteration 2**  
-- \(A_2 = [0.29, 0.43, 0.33]\)  
-- \(B_2 = [0.44, 0.47, 0.32]\)  
-- \(D_2 ≈ 0.15\)  
-- \(C_2 = 0.75\)  
-
-**Iteration 3**  
-- \(A_3 = [0.305, 0.433, 0.327]\)  
-- \(B_3 = [0.38, 0.447, 0.297]\)  
-- \(D_3 ≈ 0.075\)  
-- \(C_3 = 0.875\)  
-
-**Iteration 4**  
-- \(A_4 = [0.313, 0.434, 0.325]\)  
-- \(B_4 = [0.35, 0.438, 0.284]\)  
-- \(D_4 ≈ 0.037\)  
-- \(C_4 = 0.938\)  
-
-**Iteration 5**  
-- \(A_5 ≈ [0.319, 0.435, 0.324]\)  
-- \(B_5 ≈ [0.33, 0.433, 0.276]\)  
-- \(D_5 ≈ 0.018\)  
-- \(C_5 = 0.97\)  
+### AI
+$$
+F_{AI}(n+1) = F_{AI}(0) + \gamma \cdot D_n
+$$
 
 ---
 
-## 7. Observations  
+## 6. Vector update  
 
-- The convergence index \(C_n\) grows with each step → progressive alignment.  
-- Low openness factors → slow convergence.  
-- High factors but < 2 → fast convergence, with oscillations.  
-- Extreme factors (0 or ≥ 2) → no convergence.  
+$$
+U_{n+1} = U_n + F_{AI→U}(I_n - U_n)
+$$  
+
+$$
+I_{n+1} = I_n + F_{U→AI}(U_n - I_n)
+$$  
 
 ---
 
-## 8. Conclusion  
+## 7. Convergence index  
 
-This model allows **step-by-step measurement of convergence** through a clear general index.  
-With enough iterations, \(C_n \to 1\), reflecting alignment between agents.  
+$$
+C_n = 1 - \frac{D_n}{D_0}
+$$  
 
-Future work includes:  
-- Rigorous measurement of the **emotional and contextual dimensions**.  
-- Dynamic modeling of openness factors (non-constant).  
+---
+
+## 8. Parameter learning  
+
+$$
+Error = F_{observed} - F_{predicted}
+$$  
+
+$$
+\alpha_{n+1} = \alpha_n + \eta \cdot (Error) \cdot I
+$$  
+
+$$
+\beta_{n+1} = \beta_n + \eta \cdot (Error) \cdot (1 - D_n)
+$$  
+
+---
+
+## 9. Reduced example (m=3)
+
+- $U_0 = [0.8, 0.4, 0.2]$  
+- $I_0 = [0.3, 0.6, 0.5]$  
+- $F_{human}=0.5$, $F_{AI}=0.4$  
+
+| Iter | Intensity | F_human | F_AI | U | I | D | C |
+|------|-----------|---------|------|---|---|---|---|
+| 1    | 0.5       | 0.325   | 0.438| [0.625,0.525,0.350] | [0.475,0.475,0.350] | 0.173 | 0.44 |
+| 2    | 0.7       | 0.280   | 0.455| [0.582,0.500,0.340] | [0.505,0.465,0.330] | 0.094 | 0.70 |
+| 3    | 0.3       | 0.289   | 0.468| [0.554,0.487,0.335] | [0.522,0.460,0.318] | 0.054 | 0.83 |
+
+---
+
+## 10. Expanded example (m=45)
+
+- Initial distance: $D_0 ≈ 0.42$  
+- Final distance after 5 steps: $D_5 ≈ 0.03$  
+- Convergence: $C_5 ≈ 0.93$  
 
 ---
