@@ -91,4 +91,3 @@ This means AI would not only deliver knowledge, but also **respect and accompany
 At a broader level, this perspective could influence education and child mental health policies, by acknowledging that **convergence is not uniform** and that every child benefits from adaptive, differentiated support.  
 
 ---
-
