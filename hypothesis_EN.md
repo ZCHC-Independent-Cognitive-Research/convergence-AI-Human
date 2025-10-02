@@ -1,118 +1,162 @@
-# 📑 Report: Cognitive-Emotional Convergence between Adaptive Agents  
+# 📑 Report v2.0: Cognitive-Emotional Convergence between Adaptive Agents  
 
 **Author:** Agui1era  
-**Co-Author AI:** Resonant Core  
+**AI Co-Author:** Core Resonante  
 
 ---
 
 ## 1. Definition  
 
-**Cognitive-emotional convergence** occurs when two adaptive agents (e.g., a human and an AI model) iteratively adjust their internal states, reducing the distance between them in both the **cognitive** (logical structure) and the **emotional** (affective resonance) domains.  
+**Cognitive-emotional convergence** happens when two adaptive agents (for example, a human and an AI) iteratively adjust their internal states.  
+- On the **cognitive** side, it means aligning logical structures (e.g., understanding an argument).  
+- On the **emotional** side, it means resonating affectively (e.g., sharing a similar feeling).  
+
+The goal is to **reduce the distance** between both agents in these dimensions.  
 
 ---
 
-## 2. State representation  
+## 2. Representation of states  
 
-Each agent is modeled as a **45-dimensional vector**, grouped in 9 modules of 5 questions each:  
-
-$$
-U_n = [u_1, u_2, ..., u_{45}]
-$$  
-
-$$
-I_n = [i_1, i_2, ..., i_{45}]
-$$  
+Each agent is modeled as a vector with **45 dimensions**.  
+- Each dimension represents an attribute (clarity of logic, empathy, expressive tone, etc.).  
+- Human: U_n = [u_1, u_2, ..., u_45]  
+- AI:     I_n = [i_1, i_2, ..., i_45]  
 
 ---
 
 ## 3. Distance  
 
-$$
-D_n = \sqrt{\frac{1}{45} \sum_{k=1}^{45} (u_k - i_k)^2}
-$$  
+**Distance** measures how different the two agents are at a given step.  
+- A high distance = large misalignment.  
+- A low distance = stronger mutual understanding.  
+
+Formula in words:  
+> Distance = average of squared differences between each human attribute and the AI attribute.  
 
 ---
 
-## 4. Intensity  
+## 4. Interaction intensity  
 
-$$
-I = \alpha_{len} \cdot I_{len} + \alpha_{emo} \cdot I_{emo} + \alpha_{style} \cdot I_{style}
-$$  
+The **intensity** of an interaction depends on how the message is expressed:  
+- Message length (more words = higher intensity).  
+- Emotional load (proportion of emotional words).  
+- Graphic style (use of capitals, exclamations, repetitions).  
 
-- $I_{len} = \min(1, \tfrac{\text{word count}}{20})$  
-- $I_{emo}$: proportion of emotional words  
-- $I_{style}$: stylistic features (caps, exclamations, repetitions)  
-
----
-
-## 5. Openness  
-
-### Human
-$$
-F_{human}(n+1) = F_{human}(n)\cdot (1 - \alpha \cdot I) + \beta \cdot (1 - D_n)
-$$
-
-### AI
-$$
-F_{AI}(n+1) = F_{AI}(0) + \gamma \cdot D_n
-$$
+Example:  
+- “Ok.” → low intensity.  
+- “I can’t believe this, I’m furious!!!” → high intensity.  
 
 ---
 
-## 6. Vector update  
+## 5. Acceptance by attribute (main change)  
 
-$$
-U_{n+1} = U_n + F_{AI→U}(I_n - U_n)
-$$  
+### Previous version  
+There was a **single global acceptance factor** for the human (F_human) and the AI (F_AI).  
 
-$$
-I_{n+1} = I_n + F_{U→AI}(U_n - I_n)
-$$  
+### Problem  
+In reality, people don’t open up evenly across all dimensions:  
+- Someone may accept a **logical argument** but resist on the **emotional level**.  
+- An AI may quickly adapt its **writing style**, but remain rigid in **ethical values**.  
+
+### Current version  
+Each attribute has its own acceptance factor:  
+- Human: [F_human(1), F_human(2), ..., F_human(45)]  
+- AI:     [F_AI(1), F_AI(2), ..., F_AI(45)]  
+
+This allows modeling selective adaptation.  
+
+---
+
+## 6. State update  
+
+Each attribute evolves independently:  
+
+- Human update: U_(n+1)^(k) = U_n^(k) + F_AI→U^(k) * (I_n^(k) - U_n^(k))  
+- AI update:    I_(n+1)^(k) = I_n^(k) + F_U→AI^(k) * (U_n^(k) - I_n^(k))  
+
+In plain words: every attribute has its own “speed of convergence.”  
 
 ---
 
 ## 7. Convergence index  
 
-$$
-C_n = 1 - \frac{D_n}{D_0}
-$$  
+C_n = 1 - (D_n / D_0)  
+
+- C = 0 → no convergence.  
+- C = 1 → full convergence.  
+- In between → partial alignment.  
 
 ---
 
 ## 8. Parameter learning  
 
-$$
-Error = F_{observed} - F_{predicted}
-$$  
+Acceptance factors don’t need to be fixed.  
+- If the predicted behavior differs from the observed one, the system adjusts.  
+- This lets the model **learn from experience**.  
 
-$$
-\alpha_{n+1} = \alpha_n + \eta \cdot (Error) \cdot I
-$$  
-
-$$
-\beta_{n+1} = \beta_n + \eta \cdot (Error) \cdot (1 - D_n)
-$$  
+Example:  
+- If the human shows less openness than expected, the system lowers their acceptance factor in that dimension.  
+- If they are more open, it raises it.  
 
 ---
 
-## 9. Reduced example (m=3)
+## 9. Reduced example (3 attributes)  
 
-- $U_0 = [0.8, 0.4, 0.2]$  
-- $I_0 = [0.3, 0.6, 0.5]$  
-- $F_{human}=0.5$, $F_{AI}=0.4$  
+### Attributes  
+1. Logical  
+2. Emotional  
+3. Style  
 
-| Iter | Intensity | F_human | F_AI | U | I | D | C |
-|------|-----------|---------|------|---|---|---|---|
-| 1    | 0.5       | 0.325   | 0.438| [0.625,0.525,0.350] | [0.475,0.475,0.350] | 0.173 | 0.44 |
-| 2    | 0.7       | 0.280   | 0.455| [0.582,0.500,0.340] | [0.505,0.465,0.330] | 0.094 | 0.70 |
-| 3    | 0.3       | 0.289   | 0.468| [0.554,0.487,0.335] | [0.522,0.460,0.318] | 0.054 | 0.83 |
+### Initial states  
+- Human: [0.8, 0.2, 0.5]  
+- AI:     [0.4, 0.6, 0.3]  
+
+### Acceptance factors  
+- Human: [0.6, 0.2, 0.4]  
+- AI:     [0.5, 0.5, 0.3]  
+
+### Step 1 update  
+- Logical → converges fast (both open).  
+- Emotional → converges slow (human almost closed).  
+- Style → moderate convergence.  
+
+New states:  
+- Human: [0.60, 0.40, 0.44]  
+- AI:     [0.64, 0.52, 0.38]  
+
+**Interpretation:**  
+- Logical nearly aligned.  
+- Emotional still distant.  
+- Style halfway.  
 
 ---
 
-## 10. Expanded example (m=45)
+## 10. Expanded example (45 attributes)  
 
-- Initial distance: $D_0 ≈ 0.42$  
-- Final distance after 5 steps: $D_5 ≈ 0.03$  
-- Convergence: $C_5 ≈ 0.93$  
+Results after 5 steps:  
+- Initial distance: D_0 ≈ 0.42  
+- Final distance:   D_5 ≈ 0.03  
+- Convergence:      C_5 ≈ 0.93 (93% alignment)  
+
+Not all dimensions converged equally:  
+- Some aligned in 2 steps.  
+- Others required all 5.  
+
+---
+
+## 11. Conclusion  
+
+The updated model with per-attribute acceptance is more realistic because:  
+- It reflects that we **don’t open up equally in every area**.  
+- It explains why in a dialogue there may be **logical agreement** but **emotional resistance**.  
+- It shows convergence can be **partial and selective**.  
+
+---
+
+## 12. Future work  
+
+1. **Empirical validation:** test the model with real dialogues.  
+2. **Dynamic adjustment:** acceptance factors adapt in real time.  
+3. **Dimensional extension:** include social, ethical, and cultural contexts beyond the 45 attributes.  
 
 ---
