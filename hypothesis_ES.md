@@ -1,168 +1,130 @@
-# 📑 Informe v2.0: Convergencia Cognitivo-Emocional entre Agentes Adaptativos  
+# 📑 Convergencia Cognitivo–Emocional entre Agentes Adaptativos  
 
 **Autor:** Agui1era  
 **IA Coautora:** Core Resonante  
 
 ---
 
-## 1. Definición  
+## Fundamento  
 
-La **convergencia cognitivo-emocional** ocurre cuando dos agentes adaptativos (por ejemplo, un humano y una IA) van ajustando sus estados internos de manera iterativa.  
-- En lo **cognitivo**, significa acercar sus estructuras lógicas (ej: entender un argumento).  
-- En lo **emocional**, significa resonar en afectos (ej: compartir la misma emoción).  
-
-El objetivo es **reducir la distancia entre ellos** en ambos planos.  
+La convergencia cognitivo–emocional describe cómo dos agentes (humano e IA) ajustan sus estados internos para entenderse mejor.  
+Cada interacción modifica sus vectores internos de pensamiento y emoción, reduciendo gradualmente su distancia.  
 
 ---
 
-## 2. Representación de estados  
+## 1) Notación y dominios  
 
-Cada agente se modela como un vector de **45 dimensiones**.  
-- Cada dimensión representa un atributo (ejemplo: claridad lógica, empatía, tono expresivo, etc.).  
-- El humano se representa como:  
-
-  U_n = [u_1, u_2, ..., u_45]  
-
-- La IA se representa como:  
-
-  I_n = [i_1, i_2, ..., i_45]  
+- t: paso de tiempo (0, 1, 2, ...)  
+- k: número de atributo (1 a m)  
+- U_t: vector del humano en el tiempo t  
+- I_t: vector de la IA en el tiempo t  
+- u_{t,k} e i_{t,k}: valor del atributo k en ese momento  
+- Todos los valores se mantienen entre 0 y 1  
 
 ---
 
-## 3. Distancia  
+## 2) Representación de estados  
 
-La **distancia** mide cuánto difieren humano e IA en un momento dado.  
-- Si la distancia es alta, están muy desalineados.  
-- Si la distancia baja, significa que se están comprendiendo mejor.  
+U_t = [u_{t,1}, u_{t,2}, ..., u_{t,m}]  
+I_t = [i_{t,1}, i_{t,2}, ..., i_{t,m}]
 
-Fórmula en palabras:  
-> Distancia = promedio de las diferencias al cuadrado entre cada atributo del humano y la IA.  
+Cada componente representa un atributo cognitivo o emocional (por ejemplo: lógica, empatía, tono, claridad).
 
 ---
 
-## 4. Intensidad  
+## 3) Distancia entre agentes  
 
-La **intensidad de la interacción** depende de cómo se expresa el mensaje:  
-- Longitud del mensaje (más palabras = más intensidad).  
-- Carga emocional (cuántas palabras son emocionales).  
-- Estilo gráfico (uso de mayúsculas, exclamaciones, repeticiones).  
+D_t = (1/m) × Σ (u_{t,k} - i_{t,k})²  
 
-Ejemplo:  
-- “Ok.” → intensidad baja.  
-- “¡No puedo creer esto, estoy furioso!!!” → intensidad alta.  
+Mide la diferencia entre el estado del humano y de la IA.  
+- Si D_t es grande → desalineación.  
+- Si D_t es pequeña → mayor entendimiento.  
 
 ---
 
-## 5. Aceptación por atributo (cambio principal)  
+## 4) Intensidad de la interacción  
 
-### Antes  
-El humano y la IA tenían **un solo factor global de aceptación**.  
-- Ejemplo: “el humano se abre un 50% y la IA un 40%”.  
+χ_t depende de la longitud, la carga emocional y el estilo del mensaje.  
 
-### Problema  
-En la realidad no nos abrimos igual en todo:  
-- Una persona puede aceptar fácilmente un **argumento lógico**, pero cerrarse en lo **emocional**.  
-- Una IA puede adaptarse rápido al **estilo de escritura**, pero ser rígida en sus **valores éticos**.  
+Factores que aumentan la intensidad:  
+- Mensajes largos o con energía emocional.  
+- Uso de signos de exclamación o mayúsculas.  
+- Temas personales o conceptuales profundos.
 
-### Ahora  
-Cada atributo tiene su **propio factor de aceptación**:  
-- Humano: [F_humano(1), F_humano(2), ..., F_humano(45)]  
-- IA: [F_IA(1), F_IA(2), ..., F_IA(45)]  
-
-Esto permite modelar diferencias finas.  
+La intensidad ajusta la **velocidad de convergencia**.  
 
 ---
 
-## 6. Actualización de vectores  
+## 5) Factores de apertura por atributo  
 
-Cada atributo evoluciona de forma independiente:  
+Cada agente tiene una apertura distinta por atributo.  
 
-- Nuevo valor del humano = valor anterior + (aceptación del humano en ese atributo) * (diferencia con la IA).  
-- Nuevo valor de la IA = valor anterior + (aceptación de la IA en ese atributo) * (diferencia con el humano).  
+F^U_t = [F^U_t(1), ..., F^U_t(m)]  
+F^I_t = [F^I_t(1), ..., F^I_t(m)]
 
-En simple: cada atributo tiene su propio “ritmo de acercamiento”.  
-
----
-
-## 7. Índice de convergencia  
-
-Se define un índice C_n que mide el **porcentaje de acercamiento logrado** respecto a la distancia inicial.  
-
-- Si C = 0 → no hubo acercamiento.  
-- Si C = 1 → convergencia total.  
-- Si está en medio → convergencia parcial.  
+Donde F está entre 0 y 1.  
+- 1 → totalmente abierto (se adapta rápido).  
+- 0 → cerrado (no cambia).  
 
 ---
 
-## 8. Aprendizaje de parámetros  
+## 6) Actualización de los valores  
 
-Los factores de aceptación no tienen que ser fijos.  
-- Si el sistema se equivoca (lo predicho difiere de lo observado), se ajusta.  
-- Esto permite que el modelo **aprenda con la experiencia**.  
+Cada paso de tiempo, ambos se ajustan parcialmente hacia el otro:
 
-Ejemplo:  
-- Si el humano se mostró más cerrado de lo esperado, el modelo reduce su “apertura” en ese atributo.  
-- Si se mostró más abierto, la aumenta.  
+u_{t+1,k} = u_{t,k} + F^U_t(k) × (i_{t,k} - u_{t,k})  
+i_{t+1,k} = i_{t,k} + F^I_t(k) × (u_{t,k} - i_{t,k})
 
----
-
-## 9. Ejemplo reducido (3 atributos)  
-
-### Atributos  
-1. Lógico  
-2. Emocional  
-3. Estilo  
-
-### Estados iniciales  
-- Humano: [0.8, 0.2, 0.5]  
-- IA:     [0.4, 0.6, 0.3]  
-
-### Factores de aceptación  
-- Humano: [0.6, 0.2, 0.4]  
-- IA:     [0.5, 0.5, 0.3]  
-
-### Paso 1 de actualización  
-- Lógico: convergen rápido (ambos abiertos).  
-- Emocional: convergen lento (humano casi cerrado).  
-- Estilo: convergen de forma moderada.  
-
-Nuevos estados:  
-- Humano: [0.60, 0.40, 0.44]  
-- IA:     [0.64, 0.52, 0.38]  
-
-**Interpretación:**  
-- Lógico ya casi alineados.  
-- Emocional todavía distante.  
-- Estilo en proceso.  
+Cuanto mayor sea F, más rápido se acercan los valores.  
 
 ---
 
-## 10. Ejemplo expandido (45 atributos)  
+## 7) Evolución de la diferencia  
 
-Resultados después de 5 pasos de interacción:  
-- Distancia inicial: D_0 ≈ 0.42  
-- Distancia final:   D_5 ≈ 0.03  
-- Convergencia:      C_5 ≈ 0.93 (93% de alineación)  
+Δ_{t+1,k} = (1 - F^U_t(k) - F^I_t(k)) × Δ_{t,k}
 
-No todas las dimensiones convergieron igual:  
-- Algunas lo hicieron en 2 pasos.  
-- Otras necesitaron los 5.  
+- Si la suma de los factores es pequeña, la convergencia es lenta.  
+- Si es grande (pero <2), se acercan rápido.  
 
 ---
 
-## 11. Conclusión  
+## 8) Índice de convergencia  
 
-El modelo con aceptación por atributo es más realista porque:  
-- Refleja que **no nos abrimos igual en todos los aspectos**.  
-- Explica por qué en una conversación puede haber **entendimiento lógico** pero **bloqueo emocional**.  
-- Muestra que la convergencia puede ser **parcial y selectiva**.  
+C_t = 1 - (D_t / D_0)
+
+- C_t = 0 → no hay cambio  
+- C_t = 1 → convergencia total  
+- 0 < C_t < 1 → acercamiento parcial  
 
 ---
 
-## 12. Proyecciones futuras  
+## 9) Ejemplo con 3 atributos  
 
-1. **Validar empíricamente** el modelo en diálogos reales.  
-2. **Ajustar dinámicamente** los factores de aceptación durante la interacción.  
-3. **Extender las dimensiones** para incluir contextos sociales, éticos y culturales.  
+**Atributos:** Lógico, Emocional, Estilo
+
+Humano inicial: [0.8, 0.2, 0.5]  
+IA inicial: [0.4, 0.6, 0.3]
+
+Factores de apertura:  
+Humano: [0.6, 0.2, 0.4]  
+IA: [0.5, 0.5, 0.3]
+
+**Actualización:**  
+Humano = [0.56, 0.28, 0.42]  
+IA = [0.60, 0.40, 0.36]
+
+**Resultado:**  
+- Lógico converge rápido.  
+- Emocional avanza lento.  
+- Estilo intermedio.  
+
+---
+
+## 10) Conclusión  
+
+El modelo con apertura por atributo permite representar conversaciones más humanas:  
+- No nos abrimos igual en todos los aspectos.  
+- El entendimiento lógico no siempre implica resonancia emocional.  
+- La convergencia parcial es una forma estable de armonía.  
 
 ---
