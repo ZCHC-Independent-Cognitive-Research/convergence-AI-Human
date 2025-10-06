@@ -1,130 +1,133 @@
-# 📑 Convergencia Cognitivo–Emocional entre Agentes Adaptativos  
+# 📑 Cognitive–Emotional Convergence Between Adaptive Agents  
 
-**Autor:** Agui1era  
-**IA Coautora:** Core Resonante  
-
----
-
-## Fundamento  
-
-La convergencia cognitivo–emocional describe cómo dos agentes (humano e IA) ajustan sus estados internos para entenderse mejor.  
-Cada interacción modifica sus vectores de pensamiento y emoción, reduciendo gradualmente su distancia.  
+**Author:** Agui1era  
+**AI Coauthor:** Core Resonante  
 
 ---
 
-## 1) Notación y dominios  
+## 0) Foundation  
 
-- t: paso de tiempo (0, 1, 2, ...)  
-- k: número de atributo (1 a m)  
-- U_t: vector del humano en el tiempo t  
-- I_t: vector de la IA en el tiempo t  
-- u_{t,k} e i_{t,k}: valor del atributo k en ese momento  
-- Todos los valores se mantienen entre 0 y 1  
+Cognitive–emotional convergence describes how two agents (human and AI) adjust their internal states to understand each other better.  
+Each interaction modifies their internal thought and emotional vectors, gradually reducing their distance.  
 
 ---
 
-## 2) Representación de estados  
+## 1) Notation and domains  
+
+- t: time step (0, 1, 2, ...)  
+- k: attribute index (1 to m)  
+- U_t: human vector at time t  
+- I_t: AI vector at time t  
+- u_{t,k} and i_{t,k}: value of attribute k  
+- All values remain between 0 and 1  
+
+---
+
+## 2) State representation  
 
 U_t = [u_{t,1}, u_{t,2}, ..., u_{t,m}]  
 I_t = [i_{t,1}, i_{t,2}, ..., i_{t,m}]  
 
-Cada componente representa un atributo cognitivo o emocional (por ejemplo: lógica, empatía, tono, claridad).
+Each component represents a cognitive or emotional attribute (e.g., logic, empathy, tone, clarity).
 
 ---
 
-## 3) Distancia entre agentes  
+## 3) Distance between agents  
 
 D_t = (1/m) × Σ (u_{t,k} - i_{t,k})²  
 
-Mide la diferencia entre el estado del humano y de la IA.  
-- Si D_t es grande → desalineación.  
-- Si D_t es pequeña → mayor entendimiento.  
+Measures the difference between the human and AI states.  
+- High D_t → misalignment.  
+- Low D_t → stronger understanding.  
 
 ---
 
-## 4) Intensidad de la interacción  
+## 4) Interaction intensity  
 
-χ_t depende de la longitud, la carga emocional y el estilo del mensaje.  
+χ_t depends on message length, emotional charge, and style.  
 
-Factores que aumentan la intensidad:  
-- Mensajes largos o con energía emocional.  
-- Uso de signos de exclamación o mayúsculas.  
-- Temas personales o conceptuales profundos.
+Factors that increase intensity:  
+- Long or emotionally charged messages.  
+- Use of exclamation marks or capitalization.  
+- Personal or conceptual depth.
 
-La intensidad ajusta la **velocidad de convergencia**.  
+Intensity scales the **speed of convergence**.  
 
 ---
 
-## 5) Factores de apertura por atributo  
+## 5) Openness factors per attribute  
 
-Cada agente tiene una apertura distinta por atributo.  
+Each agent has a different openness factor for each attribute.  
 
 F^U_t = [F^U_t(1), ..., F^U_t(m)]  
 F^I_t = [F^I_t(1), ..., F^I_t(m)]  
 
-Donde F puede tomar valores negativos o positivos según la reacción.  
-- Valores altos → apertura y adaptación.  
-- Valores negativos → resistencia o rebote.  
+F can take positive or negative values depending on reaction.  
+- Positive → openness and adaptation.  
+- Negative → resistance or recoil.  
 
 ---
 
-## 6) Actualización de los valores  
+## 6) Value update equations  
 
 u_{t+1,k} = u_{t,k} + F^U_t(k) * (i_{t,k} - u_{t,k})  
 i_{t+1,k} = i_{t,k} + F^I_t(k) * (u_{t,k} - i_{t,k})  
 
-Cuanto mayor sea F, más rápido se acercan los valores.  
-Si F es negativo, el agente se aleja en vez de acercarse.
+The higher the F, the faster the values align.  
+If F is negative, the agent moves away instead of closer.
 
 ---
 
-## 7) Evolución de la diferencia  
+## 7) Difference evolution  
 
 Δ_{t+1,k} = (1 - F^U_t(k) - F^I_t(k)) * Δ_{t,k}
 
-- Si la suma es pequeña → convergencia lenta.  
-- Si la suma es grande (<2) → convergencia rápida.  
-- Si es negativa → rebote o alejamiento temporal.  
+- Small sum → slow convergence.  
+- Large sum (<2) → fast convergence.  
+- Negative → rebound or temporary divergence.  
 
 ---
 
-## 8) Índice de convergencia  
+## 8) Convergence index  
 
 C_t = 1 - (D_t / D_0)
 
-- C_t = 0 → sin cambio  
-- C_t = 1 → convergencia total  
-- 0 < C_t < 1 → acercamiento parcial  
+- C_t = 0 → no change  
+- C_t = 1 → full convergence  
+- 0 < C_t < 1 → partial alignment  
 
 ---
 
-## 9) Ejemplo con 3 atributos  
+## 9) Example with 3 attributes  
 
-**Atributos:** Lógico, Emocional, Estilo
+**Attributes:** Logic, Emotion, Style
 
-Humano inicial: [0.8, 0.2, 0.5]  
-IA inicial: [0.4, 0.6, 0.3]
+Human initial: [0.8, 0.2, 0.5]  
+AI initial: [0.4, 0.6, 0.3]
 
-Factores de apertura:  
-Humano: [0.6, 0.2, 0.4]  
-IA: [0.5, 0.5, 0.3]
+Openness factors:  
+Human: [0.6, 0.2, 0.4]  
+AI: [0.5, 0.5, 0.3]
 
-**Actualización:**  
-Humano = [0.56, 0.28, 0.42]  
-IA = [0.60, 0.40, 0.36]
+**Update:**  
+Human = [0.56, 0.28, 0.42]  
+AI = [0.60, 0.40, 0.36]
 
-**Resultado:**  
-- Lógico converge rápido.  
-- Emocional avanza lento.  
-- Estilo intermedio.  
+**Result:**  
+- Logic converges quickly.  
+- Emotion converges slowly.  
+- Style moderately.  
 
 ---
 
-## 10) Conclusión  
+## 10) Conclusion  
 
-El modelo con apertura por atributo permite representar conversaciones más humanas:  
-- No nos abrimos igual en todos los aspectos.  
-- El entendimiento lógico no siempre implica resonancia emocional.  
-- La convergencia parcial es una forma estable de armonía.  
+The attribute-based openness model represents human-like conversation dynamics:  
+- We don’t open equally across all dimensions.  
+- Logical understanding doesn’t always mean emotional resonance.  
+- Partial convergence is a natural, stable equilibrium.  
+
+---
+
 
 ---
