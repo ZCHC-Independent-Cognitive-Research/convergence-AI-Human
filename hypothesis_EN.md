@@ -1,162 +1,130 @@
-# 📑 Report v2.0: Cognitive-Emotional Convergence between Adaptive Agents  
+# 📑 Cognitive–Emotional Convergence Between Adaptive Agents  
 
 **Author:** Agui1era  
-**AI Co-Author:** Core Resonante  
+**AI Coauthor:** Core Resonante  
 
 ---
 
-## 1. Definition  
+##  Foundation  
 
-**Cognitive-emotional convergence** happens when two adaptive agents (for example, a human and an AI) iteratively adjust their internal states.  
-- On the **cognitive** side, it means aligning logical structures (e.g., understanding an argument).  
-- On the **emotional** side, it means resonating affectively (e.g., sharing a similar feeling).  
-
-The goal is to **reduce the distance** between both agents in these dimensions.  
+Cognitive–emotional convergence describes how two agents (a human and an AI) iteratively adjust their internal states to understand each other better.  
+Each interaction modifies their internal cognitive–emotional vectors, reducing their distance over time.  
 
 ---
 
-## 2. Representation of states  
+## 1) Notation and domains  
 
-Each agent is modeled as a vector with **45 dimensions**.  
-- Each dimension represents an attribute (clarity of logic, empathy, expressive tone, etc.).  
-- Human: U_n = [u_1, u_2, ..., u_45]  
-- AI:     I_n = [i_1, i_2, ..., i_45]  
-
----
-
-## 3. Distance  
-
-**Distance** measures how different the two agents are at a given step.  
-- A high distance = large misalignment.  
-- A low distance = stronger mutual understanding.  
-
-Formula in words:  
-> Distance = average of squared differences between each human attribute and the AI attribute.  
+- t: time step (0, 1, 2, ...)  
+- k: attribute index (1 to m)  
+- U_t: human vector at time t  
+- I_t: AI vector at time t  
+- u_{t,k} and i_{t,k}: value of attribute k  
+- All values stay between 0 and 1  
 
 ---
 
-## 4. Interaction intensity  
+## 2) State representation  
 
-The **intensity** of an interaction depends on how the message is expressed:  
-- Message length (more words = higher intensity).  
-- Emotional load (proportion of emotional words).  
-- Graphic style (use of capitals, exclamations, repetitions).  
+U_t = [u_{t,1}, u_{t,2}, ..., u_{t,m}]  
+I_t = [i_{t,1}, i_{t,2}, ..., i_{t,m}]
 
-Example:  
-- “Ok.” → low intensity.  
-- “I can’t believe this, I’m furious!!!” → high intensity.  
+Each component represents a cognitive or emotional attribute (e.g., logic, empathy, tone, clarity).
 
 ---
 
-## 5. Acceptance by attribute (main change)  
+## 3) Distance between agents  
 
-### Previous version  
-There was a **single global acceptance factor** for the human (F_human) and the AI (F_AI).  
+D_t = (1/m) × Σ (u_{t,k} - i_{t,k})²  
 
-### Problem  
-In reality, people don’t open up evenly across all dimensions:  
-- Someone may accept a **logical argument** but resist on the **emotional level**.  
-- An AI may quickly adapt its **writing style**, but remain rigid in **ethical values**.  
-
-### Current version  
-Each attribute has its own acceptance factor:  
-- Human: [F_human(1), F_human(2), ..., F_human(45)]  
-- AI:     [F_AI(1), F_AI(2), ..., F_AI(45)]  
-
-This allows modeling selective adaptation.  
+It measures the difference between the states of both agents.  
+- High D_t → low alignment.  
+- Low D_t → strong understanding.  
 
 ---
 
-## 6. State update  
+## 4) Interaction intensity  
 
-Each attribute evolves independently:  
+χ_t depends on message length, emotional charge, and style.  
 
-- Human update: U_(n+1)^(k) = U_n^(k) + F_AI→U^(k) * (I_n^(k) - U_n^(k))  
-- AI update:    I_(n+1)^(k) = I_n^(k) + F_U→AI^(k) * (U_n^(k) - I_n^(k))  
+Higher intensity occurs with:  
+- Long or emotionally charged messages.  
+- Use of exclamation marks or capital letters.  
+- Deep or personal topics.  
 
-In plain words: every attribute has its own “speed of convergence.”  
-
----
-
-## 7. Convergence index  
-
-C_n = 1 - (D_n / D_0)  
-
-- C = 0 → no convergence.  
-- C = 1 → full convergence.  
-- In between → partial alignment.  
+Intensity scales the **speed of convergence**.  
 
 ---
 
-## 8. Parameter learning  
+## 5) Attribute openness factors  
 
-Acceptance factors don’t need to be fixed.  
-- If the predicted behavior differs from the observed one, the system adjusts.  
-- This lets the model **learn from experience**.  
+Each agent has a different openness for each attribute.  
 
-Example:  
-- If the human shows less openness than expected, the system lowers their acceptance factor in that dimension.  
-- If they are more open, it raises it.  
+F^U_t = [F^U_t(1), ..., F^U_t(m)]  
+F^I_t = [F^I_t(1), ..., F^I_t(m)]
 
----
-
-## 9. Reduced example (3 attributes)  
-
-### Attributes  
-1. Logical  
-2. Emotional  
-3. Style  
-
-### Initial states  
-- Human: [0.8, 0.2, 0.5]  
-- AI:     [0.4, 0.6, 0.3]  
-
-### Acceptance factors  
-- Human: [0.6, 0.2, 0.4]  
-- AI:     [0.5, 0.5, 0.3]  
-
-### Step 1 update  
-- Logical → converges fast (both open).  
-- Emotional → converges slow (human almost closed).  
-- Style → moderate convergence.  
-
-New states:  
-- Human: [0.60, 0.40, 0.44]  
-- AI:     [0.64, 0.52, 0.38]  
-
-**Interpretation:**  
-- Logical nearly aligned.  
-- Emotional still distant.  
-- Style halfway.  
+F ranges from 0 to 1.  
+- 1 → fully open (adapts quickly).  
+- 0 → closed (no change).  
 
 ---
 
-## 10. Expanded example (45 attributes)  
+## 6) Value update equations  
 
-Results after 5 steps:  
-- Initial distance: D_0 ≈ 0.42  
-- Final distance:   D_5 ≈ 0.03  
-- Convergence:      C_5 ≈ 0.93 (93% alignment)  
+Each agent moves slightly toward the other:
 
-Not all dimensions converged equally:  
-- Some aligned in 2 steps.  
-- Others required all 5.  
+u_{t+1,k} = u_{t,k} + F^U_t(k) × (i_{t,k} - u_{t,k})  
+i_{t+1,k} = i_{t,k} + F^I_t(k) × (u_{t,k} - i_{t,k})
+
+Higher openness → faster alignment.  
 
 ---
 
-## 11. Conclusion  
+## 7) Gap evolution  
 
-The updated model with per-attribute acceptance is more realistic because:  
-- It reflects that we **don’t open up equally in every area**.  
-- It explains why in a dialogue there may be **logical agreement** but **emotional resistance**.  
-- It shows convergence can be **partial and selective**.  
+Δ_{t+1,k} = (1 - F^U_t(k) - F^I_t(k)) × Δ_{t,k}
+
+- Small sum → slow convergence.  
+- Larger sum (<2) → fast approach.  
 
 ---
 
-## 12. Future work  
+## 8) Convergence index  
 
-1. **Empirical validation:** test the model with real dialogues.  
-2. **Dynamic adjustment:** acceptance factors adapt in real time.  
-3. **Dimensional extension:** include social, ethical, and cultural contexts beyond the 45 attributes.  
+C_t = 1 - (D_t / D_0)
+
+- C_t = 0 → no change  
+- C_t = 1 → full convergence  
+- 0 < C_t < 1 → partial alignment  
+
+---
+
+## 9) Example with 3 attributes  
+
+**Attributes:** Logic, Emotion, Style
+
+Human initial: [0.8, 0.2, 0.5]  
+AI initial: [0.4, 0.6, 0.3]
+
+Openness:  
+Human: [0.6, 0.2, 0.4]  
+AI: [0.5, 0.5, 0.3]
+
+**Update:**  
+Human = [0.56, 0.28, 0.42]  
+AI = [0.60, 0.40, 0.36]
+
+**Result:**  
+- Logic converges fast.  
+- Emotion converges slow.  
+- Style in between.  
+
+---
+
+## 10) Conclusion  
+
+The attribute-based openness model captures realistic adaptive resonance:  
+- People open differently across aspects.  
+- Logical understanding ≠ emotional resonance.  
+- Partial convergence is a stable harmony, not a flaw.  
 
 ---
