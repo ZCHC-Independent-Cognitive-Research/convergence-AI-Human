@@ -5,7 +5,7 @@
 
 ---
 
-## 0) Foundation  
+##  Foundation  
 
 Cognitive–emotional convergence describes how two agents (human and AI) adjust their internal states to understand each other better.  
 Each interaction modifies their internal thought and emotional vectors, gradually reducing their distance.  
