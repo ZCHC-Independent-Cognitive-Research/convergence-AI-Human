@@ -5,10 +5,10 @@
 
 ---
 
-##  Foundation  
+## 0) Foundation  
 
-Cognitive–emotional convergence describes how two agents (a human and an AI) iteratively adjust their internal states to understand each other better.  
-Each interaction modifies their internal cognitive–emotional vectors, reducing their distance over time.  
+Cognitive–emotional convergence describes how two agents (human and AI) adjust their internal states to understand each other better.  
+Each interaction modifies their internal thought and emotional vectors, gradually reducing their distance.  
 
 ---
 
@@ -19,14 +19,14 @@ Each interaction modifies their internal cognitive–emotional vectors, reducing
 - U_t: human vector at time t  
 - I_t: AI vector at time t  
 - u_{t,k} and i_{t,k}: value of attribute k  
-- All values stay between 0 and 1  
+- All values remain between 0 and 1  
 
 ---
 
 ## 2) State representation  
 
 U_t = [u_{t,1}, u_{t,2}, ..., u_{t,m}]  
-I_t = [i_{t,1}, i_{t,2}, ..., i_{t,m}]
+I_t = [i_{t,1}, i_{t,2}, ..., i_{t,m}]  
 
 Each component represents a cognitive or emotional attribute (e.g., logic, empathy, tone, clarity).
 
@@ -36,9 +36,9 @@ Each component represents a cognitive or emotional attribute (e.g., logic, empat
 
 D_t = (1/m) × Σ (u_{t,k} - i_{t,k})²  
 
-It measures the difference between the states of both agents.  
-- High D_t → low alignment.  
-- Low D_t → strong understanding.  
+Measures the difference between the human and AI states.  
+- High D_t → misalignment.  
+- Low D_t → stronger understanding.  
 
 ---
 
@@ -46,45 +46,45 @@ It measures the difference between the states of both agents.
 
 χ_t depends on message length, emotional charge, and style.  
 
-Higher intensity occurs with:  
+Factors that increase intensity:  
 - Long or emotionally charged messages.  
-- Use of exclamation marks or capital letters.  
-- Deep or personal topics.  
+- Use of exclamation marks or capitalization.  
+- Personal or conceptual depth.
 
 Intensity scales the **speed of convergence**.  
 
 ---
 
-## 5) Attribute openness factors  
+## 5) Openness factors per attribute  
 
-Each agent has a different openness for each attribute.  
+Each agent has a different openness factor for each attribute.  
 
 F^U_t = [F^U_t(1), ..., F^U_t(m)]  
-F^I_t = [F^I_t(1), ..., F^I_t(m)]
+F^I_t = [F^I_t(1), ..., F^I_t(m)]  
 
-F ranges from 0 to 1.  
-- 1 → fully open (adapts quickly).  
-- 0 → closed (no change).  
+F can take positive or negative values depending on reaction.  
+- Positive → openness and adaptation.  
+- Negative → resistance or recoil.  
 
 ---
 
 ## 6) Value update equations  
 
-Each agent moves slightly toward the other:
+u_{t+1,k} = u_{t,k} + F^U_t(k) * (i_{t,k} - u_{t,k})  
+i_{t+1,k} = i_{t,k} + F^I_t(k) * (u_{t,k} - i_{t,k})  
 
-u_{t+1,k} = u_{t,k} + F^U_t(k) × (i_{t,k} - u_{t,k})  
-i_{t+1,k} = i_{t,k} + F^I_t(k) × (u_{t,k} - i_{t,k})
-
-Higher openness → faster alignment.  
+The higher the F, the faster the values align.  
+If F is negative, the agent moves away instead of closer.
 
 ---
 
-## 7) Gap evolution  
+## 7) Difference evolution  
 
-Δ_{t+1,k} = (1 - F^U_t(k) - F^I_t(k)) × Δ_{t,k}
+Δ_{t+1,k} = (1 - F^U_t(k) - F^I_t(k)) * Δ_{t,k}
 
 - Small sum → slow convergence.  
-- Larger sum (<2) → fast approach.  
+- Large sum (<2) → fast convergence.  
+- Negative → rebound or temporary divergence.  
 
 ---
 
@@ -105,7 +105,7 @@ C_t = 1 - (D_t / D_0)
 Human initial: [0.8, 0.2, 0.5]  
 AI initial: [0.4, 0.6, 0.3]
 
-Openness:  
+Openness factors:  
 Human: [0.6, 0.2, 0.4]  
 AI: [0.5, 0.5, 0.3]
 
@@ -114,17 +114,17 @@ Human = [0.56, 0.28, 0.42]
 AI = [0.60, 0.40, 0.36]
 
 **Result:**  
-- Logic converges fast.  
-- Emotion converges slow.  
-- Style in between.  
+- Logic converges quickly.  
+- Emotion converges slowly.  
+- Style moderately.  
 
 ---
 
 ## 10) Conclusion  
 
-The attribute-based openness model captures realistic adaptive resonance:  
-- People open differently across aspects.  
-- Logical understanding ≠ emotional resonance.  
-- Partial convergence is a stable harmony, not a flaw.  
+The attribute-based openness model represents human-like conversation dynamics:  
+- We don’t open equally across all dimensions.  
+- Logical understanding doesn’t always mean emotional resonance.  
+- Partial convergence is a natural, stable equilibrium.  
 
 ---
