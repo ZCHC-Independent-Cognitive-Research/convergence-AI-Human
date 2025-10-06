@@ -128,5 +128,3 @@ El modelo con apertura por atributo permite representar conversaciones más huma
 - La convergencia parcial es una forma estable de armonía.  
 
 ---
-
----
