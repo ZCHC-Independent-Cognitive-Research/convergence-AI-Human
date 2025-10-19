@@ -1,15 +1,27 @@
-# Core
-numpy>=1.24.0
-pandas>=2.0.0
-matplotlib>=3.7.0
-langdetect>=1.0.9
+# Core scientific stack
+numpy==1.26.4
+pandas==2.2.3
+matplotlib==3.8.4
+langdetect==1.0.9
 
-# Transformers & NLP
-transformers>=4.40.0
-sentence-transformers>=2.6.0
-torch>=2.0.0
-torchvision>=0.15.0
-torchaudio>=2.0.0
+# Deep learning core
+torch==2.1.2
+torchvision==0.16.2
+torchaudio==2.1.2
 
-# Optional (for better text normalization)
+# HuggingFace ecosystem (stable set)
+transformers==4.37.2
+sentence-transformers==2.5.1
+accelerate==0.22.0
+peft==0.10.0
+huggingface-hub==0.20.3
+tokenizers==0.15.1
+
+# Sentiment / multilingual models
+pysentimiento==0.7.2
+
+# TensorFlow bridge for Transformers
+tf-keras==2.15.0
+
+# Optional utilities
 regex>=2023.6.3
