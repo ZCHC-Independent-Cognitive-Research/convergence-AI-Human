@@ -1,0 +1,15 @@
+# Core
+numpy>=1.24.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+langdetect>=1.0.9
+
+# Transformers & NLP
+transformers>=4.40.0
+sentence-transformers>=2.6.0
+torch>=2.0.0
+torchvision>=0.15.0
+torchaudio>=2.0.0
+
+# Optional (for better text normalization)
+regex>=2023.6.3
